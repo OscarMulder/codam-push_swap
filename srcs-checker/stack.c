@@ -6,7 +6,7 @@
 /*   By: omulder <omulder@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/01/14 12:35:38 by omulder        #+#    #+#                */
-/*   Updated: 2020/01/14 16:52:12 by omulder       ########   odam.nl         */
+/*   Updated: 2020/01/14 16:56:03 by omulder       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,7 +48,8 @@ int		stack_is_sorted(t_stack *a, int prev, int *count)
 
 int		check_stack(t_stack *a, int *count, int argc)
 {
-	if (a != NULL && !stack_is_sorted(a, a->value, count) && *count != argc - 1)
+	if ((a != NULL && !stack_is_sorted(a, a->value, count))
+		|| *count != argc - 1)
 	{
 		ft_printf("KO\n");
 		return (1);
