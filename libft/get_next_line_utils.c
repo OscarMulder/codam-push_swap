@@ -6,7 +6,7 @@
 /*   By: omulder <omulder@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2019/12/06 18:28:06 by omulder        #+#    #+#                */
-/*   Updated: 2019/12/15 12:14:19 by omulder       ########   odam.nl         */
+/*   Updated: 2020/01/14 14:29:30 by omulder       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,22 +31,22 @@ int		ft_strfind_c(const char *s, int c)
 	return (-1);
 }
 
-void		*ft_memalloc(size_t size)
-{
-	void	*new;
-	size_t	i;
+// void		*ft_memalloc(size_t size)
+// {
+// 	void	*new;
+// 	size_t	i;
 
-	new = malloc(size);
-	if (new == NULL)
-		return (NULL);
-	i = 0;
-	while (i < size)
-	{
-		((char*)new)[i] = 0;
-		i++;
-	}
-	return (new);
-}
+// 	new = malloc(size);
+// 	if (new == NULL)
+// 		return (NULL);
+// 	i = 0;
+// 	while (i < size)
+// 	{
+// 		((char*)new)[i] = 0;
+// 		i++;
+// 	}
+// 	return (new);
+// }
 
 char	*ft_strjoinfree_s1(char *s1, char *s2)
 {

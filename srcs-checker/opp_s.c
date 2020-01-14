@@ -1,30 +1,42 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   ft_memalloc.c                                      :+:    :+:            */
+/*   opp_s.c                                            :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: omulder <omulder@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2019/01/11 10:37:05 by omulder        #+#    #+#                */
-/*   Updated: 2020/01/14 14:29:09 by omulder       ########   odam.nl         */
+/*   Created: 2020/01/14 12:53:45 by omulder        #+#    #+#                */
+/*   Updated: 2020/01/14 13:45:38 by omulder       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include <checker.h>
+#include <stdlib.h>
 
-void		*ft_memalloc(size_t size)
+void	opp_sa(t_stack **a)
 {
-	void	*new;
-	size_t	i;
+	t_stack	*tmp;
 
-	new = malloc(size);
-	if (new == NULL)
-		return (NULL);
-	i = 0;
-	while (i < size)
-	{
-		((char*)new)[i] = 0;
-		i++;
-	}
-	return (new);
+	if (*a == NULL || (*a)->next == NULL)
+		return ;
+	tmp = *a;
+	*a = (*a)->next;
+	(*a)->next = tmp;
+}
+
+void	opp_sb(t_stack **b)
+{
+	t_stack	*tmp;
+
+	if (*b == NULL || (*b)->next == NULL)
+		return ;
+	tmp = *b;
+	*b = (*b)->next;
+	(*b)->next = tmp;
+}
+
+void	opp_ss(t_stack **a, t_stack **b)
+{
+	opp_sa(a);
+	opp_sb(b);
 }

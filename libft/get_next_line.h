@@ -6,14 +6,14 @@
 /*   By: omulder <omulder@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2019/12/06 18:25:22 by omulder        #+#    #+#                */
-/*   Updated: 2019/12/08 10:12:41 by omulder       ########   odam.nl         */
+/*   Updated: 2020/01/14 14:40:40 by omulder       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef GET_NEXT_LINE_H
 # define GET_NEXT_LINE_H
 # ifndef BUFFER_SIZE
-#  define BUFFER_SIZE	4
+#  define BUFFER_SIZE	1
 # endif
 # define FUNCT_ERROR	-1
 # define FUNCT_EOF		0

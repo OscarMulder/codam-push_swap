@@ -1,30 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   ft_memalloc.c                                      :+:    :+:            */
+/*   opp_p.c                                            :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: omulder <omulder@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2019/01/11 10:37:05 by omulder        #+#    #+#                */
-/*   Updated: 2020/01/14 14:29:09 by omulder       ########   odam.nl         */
+/*   Created: 2020/01/14 13:44:07 by omulder        #+#    #+#                */
+/*   Updated: 2020/01/14 13:44:16 by omulder       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include <checker.h>
+#include <stdlib.h>
 
-void		*ft_memalloc(size_t size)
+void	opp_pa(t_stack **a, t_stack **b)
 {
-	void	*new;
-	size_t	i;
+	t_stack	*tmp;
 
-	new = malloc(size);
-	if (new == NULL)
-		return (NULL);
-	i = 0;
-	while (i < size)
-	{
-		((char*)new)[i] = 0;
-		i++;
-	}
-	return (new);
+	if (*b == NULL)
+		return ;
+	tmp = *b;
+	*b = (*b)->next;
+	tmp->next = *a;
+	*a = tmp;
+}
+
+void	opp_pb(t_stack **a, t_stack **b)
+{
+	t_stack	*tmp;
+
+	if (*a == NULL)
+		return ;
+	tmp = *a;
+	*a = (*a)->next;
+	tmp->next = *b;
+	*b = tmp;
 }
