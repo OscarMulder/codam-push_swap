@@ -6,7 +6,7 @@
 /*   By: omulder <omulder@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/01/14 13:52:07 by omulder        #+#    #+#                */
-/*   Updated: 2020/01/14 14:52:44 by omulder       ########   odam.nl         */
+/*   Updated: 2020/01/14 16:27:46 by omulder       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,8 @@ void	opp_rra(t_stack **a)
 		second_last_ptr = ptr;
 		ptr = ptr->next;
 	}
-	second_last_ptr->next = *a;
+	second_last_ptr->next = NULL;
+	ptr->next = *a;
 	*a = ptr;
 }
 
@@ -43,7 +44,8 @@ void	opp_rrb(t_stack **b)
 		second_last_ptr = ptr;
 		ptr = ptr->next;
 	}
-	second_last_ptr->next = *b;
+	second_last_ptr->next = NULL;
+	ptr->next = *b;
 	*b = ptr;
 }
 

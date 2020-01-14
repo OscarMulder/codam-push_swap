@@ -6,7 +6,7 @@
 /*   By: omulder <omulder@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/01/14 12:19:51 by omulder        #+#    #+#                */
-/*   Updated: 2020/01/14 14:55:58 by omulder       ########   odam.nl         */
+/*   Updated: 2020/01/14 16:52:44 by omulder       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,8 +20,14 @@ typedef struct	s_stack {
 
 int				ft_aisint(char *n);
 
+/*
+** Stack
+*/
+
 void			print_stack(t_stack *stack);
 int				push_stack(t_stack **stack, int value);
+int				stack_is_sorted(t_stack *a, int prev, int *count);
+int				check_stack(t_stack *a, int *count, int argc);
 
 /*
 **	Opperations

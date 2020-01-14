@@ -6,20 +6,17 @@
 /*   By: omulder <omulder@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/01/14 10:30:57 by omulder        #+#    #+#                */
-/*   Updated: 2020/01/14 14:53:59 by omulder       ########   odam.nl         */
+/*   Updated: 2020/01/14 16:53:06 by omulder       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <libft.h>
 #include <checker.h>
 
-int		stack_is_sorted(t_stack *a, int prev)
+int		return_error(void)
 {
-	if (a == NULL)
-		return (1);
-	if (a->value >= prev)
-		return (stack_is_sorted(a->next, a->value));
-	return (0);
+	ft_printf("Error\n");
+	return (1);
 }
 
 int		do_opp(t_stack **a, t_stack **b, char *opp)
@@ -61,7 +58,6 @@ int		read_and_do_opps(t_stack **a, t_stack **b)
 	while (ret == 1)
 	{
 		ret = get_next_line(STDIN_FILENO, &line);
-		// ft_dprintf(2, "Did some reading, ret: %d, line: %s\n", ret, line);
 		if (ret > 0)
 		{
 			if (!do_opp(a, b, line))
@@ -84,31 +80,21 @@ int		main(int argc, char **argv)
 	size_t	i;
 	t_stack	*a;
 	t_stack *b;
+	int		count;
 
 	if (argc < 2)
 		return (1);
 	i = argc - 1;
+	count = 0;
 	a = NULL;
 	b = NULL;
 	while (i > 0)
 	{
 		if (!check_and_push(&a, argv[i]))
-		{
-			ft_printf("Error\n");
-			return (1);
-		}
+			return (return_error());
 		i--;
 	}
 	if (!read_and_do_opps(&a, &b))
-	{
-		ft_printf("Error\n");
-		return (1);
-	}
-	if (!stack_is_sorted(a, a->value))
-	{
-		ft_printf("Error\n");
-		return (1);
-	}
-	ft_printf("OK\n");
-	return (0);
+		return (return_error());
+	return (check_stack(a, &count, argc));
 }
