@@ -6,20 +6,20 @@
 /*   By: omulder <omulder@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/01/14 10:30:57 by omulder        #+#    #+#                */
-/*   Updated: 2020/01/14 16:56:34 by omulder       ########   odam.nl         */
+/*   Updated: 2020/01/14 17:00:54 by omulder       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <libft.h>
 #include <checker.h>
 
-int		return_error(void)
+static int	return_error(void)
 {
 	ft_printf("Error\n");
 	return (1);
 }
 
-int		do_opp(t_stack **a, t_stack **b, char *opp)
+static int	do_opp(t_stack **a, t_stack **b, char *opp)
 {
 	if (ft_strequ(opp, "sa"))
 		opp_sa(a);
@@ -48,7 +48,7 @@ int		do_opp(t_stack **a, t_stack **b, char *opp)
 	return (1);
 }
 
-int		read_and_do_opps(t_stack **a, t_stack **b)
+static int	read_and_do_opps(t_stack **a, t_stack **b)
 {
 	char	*line;
 	int		ret;
@@ -68,14 +68,14 @@ int		read_and_do_opps(t_stack **a, t_stack **b)
 	return (1);
 }
 
-int		check_and_push(t_stack **stack, char *value)
+static int	check_and_push(t_stack **stack, char *value)
 {
 	if (ft_aisint(value))
 		return (push_stack(stack, ft_atoi(value)));
 	return (0);
 }
 
-int		main(int argc, char **argv)
+int			main(int argc, char **argv)
 {
 	size_t	i;
 	t_stack	*a;

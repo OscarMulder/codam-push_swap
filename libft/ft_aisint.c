@@ -6,11 +6,10 @@
 /*   By: omulder <omulder@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/01/14 12:31:29 by omulder        #+#    #+#                */
-/*   Updated: 2020/01/14 14:19:32 by omulder       ########   odam.nl         */
+/*   Updated: 2020/01/14 17:01:24 by omulder       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <checker.h>
 #include <libft.h>
 
 int		ft_aisint(char *n)

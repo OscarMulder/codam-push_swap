@@ -6,7 +6,7 @@
 #    By: omulder <omulder@student.codam.nl>           +#+                      #
 #                                                    +#+                       #
 #    Created: 2020/01/14 12:14:20 by omulder        #+#    #+#                 #
-#    Updated: 2020/01/14 14:27:59 by omulder       ########   odam.nl          #
+#    Updated: 2020/01/14 17:02:47 by omulder       ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
@@ -20,7 +20,7 @@ INCLUDES = -I./ -I./libft/ -I./inc
 OBJDIR = objects/
 LINK = -L./libft -lft
 VPATH = ./srcs-checker ./srcs-swap
-SRCSCHECK = checker ft_aisint opp_p opp_r opp_rr opp_s stack
+SRCSCHECK = checker opp_p opp_r opp_rr opp_s stack
 SRCSPUSH = 
 OBJCHECK := $(SRCSCHECK:%=%.o)
 OBJPUSH:= $(OBJPUSH:%=%.o)

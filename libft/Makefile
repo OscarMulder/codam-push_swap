@@ -6,7 +6,7 @@
 #    By: omulder <omulder@student.codam.nl>           +#+                      #
 #                                                    +#+                       #
 #    Created: 2019/01/09 11:10:43 by omulder        #+#    #+#                 #
-#    Updated: 2020/01/14 10:29:35 by omulder       ########   odam.nl          #
+#    Updated: 2020/01/14 17:00:01 by omulder       ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
@@ -29,7 +29,7 @@ FILES = ft_atoi.c ft_bzero.c ft_isalnum.c ft_isalpha.c ft_isascii.c  \
 	ft_putnstr.c ft_memchr.c ft_intlen.c ft_lstcount.c ft_lstaddback.c \
 	ft_strarrsort.c ft_strarrsort_r.c ft_strarrdel.c ft_getline_fd.c \
 	ft_find_env.c ft_strdcountq.c ft_strreplace.c ft_strarrdup.c \
-	ft_find_envi.c ft_strarradd.c ft_strarrdelone.c \
+	ft_find_envi.c ft_strarradd.c ft_strarrdelone.c ft_aisint.c \
 	get_next_line.c get_next_line_utils.c
 OBJECTS = $(FILES:.c=.o)
 
