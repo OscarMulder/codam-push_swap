@@ -6,7 +6,7 @@
 /*   By: omulder <omulder@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/01/14 12:19:51 by omulder        #+#    #+#                */
-/*   Updated: 2020/01/14 16:52:44 by omulder       ########   odam.nl         */
+/*   Updated: 2020/01/14 17:05:49 by omulder       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,8 +17,6 @@ typedef struct	s_stack {
 	int				value;
 	struct s_stack	*next;
 }				t_stack;
-
-int				ft_aisint(char *n);
 
 /*
 ** Stack
