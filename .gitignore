@@ -1,3 +1,5 @@
 checker
 *.o
-*/libft.a
+libft/libft.a
+push_swap
+.vscode/settings.json

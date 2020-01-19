@@ -1,44 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   opp_s.c                                            :+:    :+:            */
+/*   opp_p.c                                            :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: omulder <omulder@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2020/01/14 12:53:45 by omulder        #+#    #+#                */
-/*   Updated: 2020/01/14 16:19:56 by omulder       ########   odam.nl         */
+/*   Created: 2020/01/14 13:44:07 by omulder        #+#    #+#                */
+/*   Updated: 2020/01/19 15:20:55 by omulder       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <checker.h>
+#include <stack.h>
 #include <stdlib.h>
 
-void	opp_sa(t_stack **a)
+void	opp_pa(t_stack **a, t_stack **b)
 {
 	t_stack	*tmp;
 
-	if (*a == NULL || (*a)->next == NULL)
-		return ;
-	tmp = *a;
-	*a = (*a)->next;
-	tmp->next = tmp->next->next;
-	(*a)->next = tmp;
-}
-
-void	opp_sb(t_stack **b)
-{
-	t_stack	*tmp;
-
-	if (*b == NULL || (*b)->next == NULL)
+	if (*b == NULL)
 		return ;
 	tmp = *b;
 	*b = (*b)->next;
-	tmp->next = tmp->next->next;
-	(*b)->next = tmp;
+	tmp->next = *a;
+	*a = tmp;
 }
 
-void	opp_ss(t_stack **a, t_stack **b)
+void	opp_pb(t_stack **a, t_stack **b)
 {
-	opp_sa(a);
-	opp_sb(b);
+	t_stack	*tmp;
+
+	if (*a == NULL)
+		return ;
+	tmp = *a;
+	*a = (*a)->next;
+	tmp->next = *b;
+	*b = tmp;
 }

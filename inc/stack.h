@@ -1,17 +1,17 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   checker.h                                          :+:    :+:            */
+/*   stack.h                                            :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: omulder <omulder@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2020/01/14 12:19:51 by omulder        #+#    #+#                */
-/*   Updated: 2020/01/14 17:05:49 by omulder       ########   odam.nl         */
+/*   Created: 2020/01/19 15:18:05 by omulder        #+#    #+#                */
+/*   Updated: 2020/01/19 15:44:48 by omulder       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef CHECKER_H
-# define CHECKER_H
+#ifndef STACK_H
+# define STACK_H
 
 typedef struct	s_stack {
 	int				value;
@@ -26,6 +26,8 @@ void			print_stack(t_stack *stack);
 int				push_stack(t_stack **stack, int value);
 int				stack_is_sorted(t_stack *a, int prev, int *count);
 int				check_stack(t_stack *a, int *count, int argc);
+int				value_exists(t_stack *a, int value);
+int				check_and_push(t_stack **stack, char *value);
 
 /*
 **	Opperations
@@ -43,4 +45,4 @@ void			opp_rra(t_stack **a);
 void			opp_rrb(t_stack **b);
 void			opp_rrr(t_stack **a, t_stack **b);
 
-#endif
+# endif

@@ -6,12 +6,12 @@
 /*   By: omulder <omulder@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/01/14 12:35:38 by omulder        #+#    #+#                */
-/*   Updated: 2020/01/14 16:56:03 by omulder       ########   odam.nl         */
+/*   Updated: 2020/01/19 15:51:44 by omulder       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <libft.h>
-#include <checker.h>
+#include <stack.h>
 
 void	print_stack(t_stack *stack)
 {
@@ -19,6 +19,13 @@ void	print_stack(t_stack *stack)
 		return ;
 	ft_printf("%d\n", stack->value);
 	print_stack(stack->next);
+}
+
+int		check_and_push(t_stack **stack, char *value)
+{
+	if (ft_aisint(value) && !value_exists(*stack, ft_atoi(value)))
+		return (push_stack(stack, ft_atoi(value)));
+	return (0);
 }
 
 int		push_stack(t_stack **stack, int value)
@@ -56,4 +63,13 @@ int		check_stack(t_stack *a, int *count, int argc)
 	}
 	ft_printf("OK\n");
 	return (0);
+}
+
+int		value_exists(t_stack *a, int value)
+{
+	if (a == NULL)
+		return (0);
+	if (a->value == value)
+		return (1);
+	return (value_exists(a->next, value));
 }

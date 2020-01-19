@@ -6,11 +6,11 @@
 /*   By: omulder <omulder@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/01/14 13:46:10 by omulder        #+#    #+#                */
-/*   Updated: 2020/01/14 16:30:08 by omulder       ########   odam.nl         */
+/*   Updated: 2020/01/19 15:20:51 by omulder       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <checker.h>
+#include <stack.h>
 #include <stdlib.h>
 
 void	opp_ra(t_stack **a)
