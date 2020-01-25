@@ -6,7 +6,7 @@
 /*   By: omulder <omulder@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/01/25 18:16:46 by omulder        #+#    #+#                */
-/*   Updated: 2020/01/25 20:33:07 by omulder       ########   odam.nl         */
+/*   Updated: 2020/01/25 21:52:03 by omulder       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,11 +22,12 @@ static void		reverse_rotations(t_oplst *start, t_oplst *end, int amount)
 	t_oplst *tmp;
 
 	i = 0;
-	while (i < amount)
+	while (i <= amount)
 	{
 		start->op = RRA;
-		start = start->next;
 		i++;
+		if (i <= amount)
+			start = start->next;
 	}
 	ptr = start->next;
 	while (ptr != end)
@@ -51,7 +52,7 @@ static void		optimize(t_stacks *s)
 		{
 			rotcount = 1;
 			start_rot = ptr;
-			while (ptr->next != NULL && ptr->op == RA)
+			while (ptr != NULL && ptr->op == RA)
 			{
 				rotcount++;
 				ptr = ptr->next;
@@ -59,7 +60,8 @@ static void		optimize(t_stacks *s)
 			if (rotcount > s->size_a / 2)
 				reverse_rotations(start_rot, ptr, s->size_a - rotcount);
 		}
-		ptr = ptr->next;
+		if (ptr != NULL)
+			ptr = ptr->next;
 	}
 }
 
@@ -79,7 +81,7 @@ void			less_stupid_sort(t_stacks *s)
 	}
 	while (s->b != NULL)
 		opp_do(s, PA);
-	print_oplst(s->oplst);
-	ft_printf("------------------------------------------------------------\n");
+	// print_oplst(s->oplst);
+	// ft_printf("------------------------------------------------------------\n");
 	optimize(s);
 }

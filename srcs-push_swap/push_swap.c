@@ -6,7 +6,7 @@
 /*   By: omulder <omulder@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/01/19 15:22:41 by omulder        #+#    #+#                */
-/*   Updated: 2020/01/25 20:30:26 by omulder       ########   odam.nl         */
+/*   Updated: 2020/01/25 21:44:44 by omulder       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,7 +43,7 @@ int			main(int argc, char **argv)
 	fake_sort(s);
 	less_stupid_sort(s);
 	print_oplst(s->oplst);
-	print_stack(s->a);
+//	print_stack(s->a);
 //	ft_printf("Nb. opps: %d\n", s->op_count);
 	delete_stacks(&s);
 	return (0);

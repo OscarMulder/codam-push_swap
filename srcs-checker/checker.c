@@ -6,7 +6,7 @@
 /*   By: omulder <omulder@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/01/14 10:30:57 by omulder        #+#    #+#                */
-/*   Updated: 2020/01/25 19:43:43 by omulder       ########   odam.nl         */
+/*   Updated: 2020/01/25 21:53:38 by omulder       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -93,5 +93,6 @@ int			main(int argc, char **argv)
 	if (!read_and_do_opps(&a, &b, &op_count))
 		return (return_error());
 	ft_printf("Op_count: %d\n", op_count);
+	print_stack(a);
 	return (check_stack(a, &count, argc));
 }
