@@ -6,7 +6,7 @@
 /*   By: omulder <omulder@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/01/19 15:18:05 by omulder        #+#    #+#                */
-/*   Updated: 2020/01/19 15:44:48 by omulder       ########   odam.nl         */
+/*   Updated: 2020/01/25 16:37:58 by omulder       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 
 typedef struct	s_stack {
 	int				value;
+	int				pos;
 	struct s_stack	*next;
 }				t_stack;
 
@@ -28,9 +29,10 @@ int				stack_is_sorted(t_stack *a, int prev, int *count);
 int				check_stack(t_stack *a, int *count, int argc);
 int				value_exists(t_stack *a, int value);
 int				check_and_push(t_stack **stack, char *value);
+void			delete_stack(t_stack **a);
 
 /*
-**	Opperations
+**	Operations
 */
 
 void			opp_sa(t_stack **a);
@@ -45,4 +47,4 @@ void			opp_rra(t_stack **a);
 void			opp_rrb(t_stack **b);
 void			opp_rrr(t_stack **a, t_stack **b);
 
-# endif
+#endif

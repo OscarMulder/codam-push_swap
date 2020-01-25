@@ -6,7 +6,7 @@
 /*   By: omulder <omulder@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/01/14 10:30:57 by omulder        #+#    #+#                */
-/*   Updated: 2020/01/19 15:32:44 by omulder       ########   odam.nl         */
+/*   Updated: 2020/01/25 19:43:43 by omulder       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,7 +48,7 @@ static int	do_opp(t_stack **a, t_stack **b, char *opp)
 	return (1);
 }
 
-static int	read_and_do_opps(t_stack **a, t_stack **b)
+static int	read_and_do_opps(t_stack **a, t_stack **b, int *op_count)
 {
 	char	*line;
 	int		ret;
@@ -62,6 +62,7 @@ static int	read_and_do_opps(t_stack **a, t_stack **b)
 		{
 			if (!do_opp(a, b, line))
 				return (0);
+			(*op_count)++;
 			free(line);
 		}
 	}
@@ -74,11 +75,13 @@ int			main(int argc, char **argv)
 	t_stack	*a;
 	t_stack *b;
 	int		count;
+	int		op_count;
 
 	if (argc < 2)
 		return (1);
 	i = argc - 1;
 	count = 0;
+	op_count = 0;
 	a = NULL;
 	b = NULL;
 	while (i > 0)
@@ -87,7 +90,8 @@ int			main(int argc, char **argv)
 			return (return_error());
 		i--;
 	}
-	if (!read_and_do_opps(&a, &b))
+	if (!read_and_do_opps(&a, &b, &op_count))
 		return (return_error());
+	ft_printf("Op_count: %d\n", op_count);
 	return (check_stack(a, &count, argc));
 }

@@ -6,7 +6,7 @@
 /*   By: omulder <omulder@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/01/14 12:35:38 by omulder        #+#    #+#                */
-/*   Updated: 2020/01/19 15:51:44 by omulder       ########   odam.nl         */
+/*   Updated: 2020/01/25 18:39:30 by omulder       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ void	print_stack(t_stack *stack)
 {
 	if (stack == NULL)
 		return ;
-	ft_printf("%d\n", stack->value);
+	ft_printf("[ value: %d, pos: %d ]\n", stack->value, stack->pos);
 	print_stack(stack->next);
 }
 
@@ -37,6 +37,7 @@ int		push_stack(t_stack **stack, int value)
 		return (0);
 	new->value = value;
 	new->next = *stack;
+	new->pos = -1;
 	*stack = new;
 	return (1);
 }
@@ -72,4 +73,13 @@ int		value_exists(t_stack *a, int value)
 	if (a->value == value)
 		return (1);
 	return (value_exists(a->next, value));
+}
+
+void	delete_stack(t_stack **a)
+{
+	if (a == NULL || *a == NULL)
+		return ;
+	delete_stack(&((*a)->next));
+	free(*a);
+	*a = NULL;
 }

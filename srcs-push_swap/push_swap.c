@@ -6,7 +6,7 @@
 /*   By: omulder <omulder@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/01/19 15:22:41 by omulder        #+#    #+#                */
-/*   Updated: 2020/01/19 15:49:05 by omulder       ########   odam.nl         */
+/*   Updated: 2020/01/25 20:30:26 by omulder       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,20 +23,28 @@ static int	return_error(void)
 
 int			main(int argc, char **argv)
 {
-	size_t	i;
-	t_stack	*a;
-	t_stack *b;
+	size_t		i;
+	t_stacks	*s;
 
 	if (argc < 2)
 		return (1);
 	i = argc - 1;
-	a = NULL;
-	b = NULL;
+	s = new_stacks();
+	if (s == NULL)
+		return (return_error());
+	(void)argv;
 	while (i > 0)
 	{
-		if (!check_and_push(&a, argv[i]))
+		if (!check_and_push(&(s->a), argv[i]))
 			return (return_error());
 		i--;
+		s->size_a++;
 	}
-    print_stack(a);
+	fake_sort(s);
+	less_stupid_sort(s);
+	print_oplst(s->oplst);
+	print_stack(s->a);
+//	ft_printf("Nb. opps: %d\n", s->op_count);
+	delete_stacks(&s);
+	return (0);
 }
