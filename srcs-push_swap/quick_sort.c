@@ -6,7 +6,7 @@
 /*   By: omulder <omulder@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/01/26 19:33:05 by omulder        #+#    #+#                */
-/*   Updated: 2020/01/26 22:12:15 by omulder       ########   odam.nl         */
+/*   Updated: 2020/01/26 22:26:14 by omulder       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,34 +41,18 @@ void	push_back(t_stacks *s, int min, int max, t_opp push)
 	}
 }
 
-void	sort_2_a(t_stacks *s)
-{
-	if (s->a->pos < s->a->next->pos)
-	{
-		opp_do(s, PB);
-		opp_do(s, PB);
-	}
-	else
-	{
-		opp_do(s, RA);
-		opp_do(s, PB);
-		opp_do(s, RRA);
-		opp_do(s, PB);
-	}
-}
-
 void	sort_2_a_push_b(t_stacks *s)
 {
 	if (s->a->pos < s->a->next->pos)
 	{
+		opp_do(s, RA);
 		opp_do(s, PB);
+		opp_do(s, RRA);
 		opp_do(s, PB);
 	}
 	else
 	{
-		opp_do(s, RA);
 		opp_do(s, PB);
-		opp_do(s, RRA);
 		opp_do(s, PB);
 	}
 }
@@ -123,16 +107,16 @@ void	sort_3_b(t_stacks *s)
 	int		is_lowest;
 
 	is_lowest = 0;
-	if (s->b->pos > s->b->next->pos && s->b->next->pos > s->b->next->next->pos)
-		return ; // 3 2 1
-	if (s->b->next->pos < s->b->next->next->pos && s->b->pos < s->b->next->next->pos)
+	if (s->b->pos < s->b->next->pos && s->b->next->pos < s->b->next->next->pos)
+		return ; // 1 2 3
+	if (s->b->next->pos > s->b->next->next->pos && s->b->pos > s->b->next->next->pos)
 	{
 		opp_do(s, PA);
 		opp_do(s, PA);
 		opp_do(s, RB);
 		sort_2_a_push_b(s);
 		opp_do(s, RRB);
-		return ; // 1 2 3 && 2 1 3
+		return ; // 3 2 1 && 2 3 1
 	}
 	// 1 3 2 && 3 1 2
 	if (s->b->pos < s->b->next->pos)
@@ -140,10 +124,10 @@ void	sort_3_b(t_stacks *s)
 	opp_do(s, RB);
 	opp_do(s, PA);
 	opp_do(s, PA);
-	if (is_lowest)
+	if (!is_lowest)
 		opp_do(s, RRB);
 	sort_2_a_push_b(s);
-	if (!is_lowest)
+	if (is_lowest)
 		opp_do(s, RRB);
 }
 
@@ -156,10 +140,10 @@ void	split_b(t_stacks *s, int min, int max)
 	i = 0;
 	rotations = 0;
 	pivot = min + ((max - min) / 2);
-	// ft_printf("-----------------------SPLIT B----------------------------\n");
-	// print_stack(s->a);
-	// ft_printf("------------------------------------------------------\nStack B\n");
-	// print_stack(s->b);
+	ft_printf("-----------------------SPLIT B----------------------------\n");
+	print_stack(s->a);
+	ft_printf("------------------------------------------------------\nStack B\n");
+	print_stack(s->b);
 	if (max - min == 3)
 	{
 		sort_3_b(s);
@@ -182,13 +166,7 @@ void	split_b(t_stacks *s, int min, int max)
 	if (pivot - min == 2)
 	{
 		sort_3_b(s);
-		opp_do(s, RB);
-		opp_do(s, RB);
-		opp_do(s, RB);
 		sort_2_a_push_b(s);
-		opp_do(s, RRB);
-		opp_do(s, RRB);
-		opp_do(s, RRB);
 	}
 	else
 	{
@@ -207,10 +185,10 @@ void	split_a(t_stacks *s, int min, int max)
 	i = 0;
 	rotations = 0;
 	pivot = min + ((max - min) / 2);
-	// ft_printf("--------------------------SPLIT A----------------------\n");
-	// print_stack(s->a);
-	// ft_printf("------------------------------------------------------\nStack B\n");
-	// print_stack(s->b);
+	ft_printf("--------------------------SPLIT A----------------------\n");
+	print_stack(s->a);
+	ft_printf("------------------------------------------------------\nStack B\n");
+	print_stack(s->b);
 	if (max - min == 3)
 	{
 		sort_3_a(s);
