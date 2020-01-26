@@ -6,7 +6,7 @@
 /*   By: omulder <omulder@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/01/19 15:13:33 by omulder        #+#    #+#                */
-/*   Updated: 2020/01/25 19:58:43 by omulder       ########   odam.nl         */
+/*   Updated: 2020/01/26 21:36:27 by omulder       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,6 +39,7 @@ typedef struct	s_stacks {
 	int			size_a;
 	int			size_b;
 	int			op_count;
+	int			total;
 	t_stack		*a;
 	t_stack		*b;
 	t_oplst		*oplst;
@@ -47,7 +48,9 @@ typedef struct	s_stacks {
 void	fake_sort(t_stacks *a);
 void	stupid_sort(t_stacks *s);
 void	less_stupid_sort(t_stacks *s);
-
+void	quick_sort(t_stacks *s);
+void	split_a(t_stacks *s, int min, int max);
+void	sort_3_a(t_stacks *s);
 /*
 ** opp_do
 */

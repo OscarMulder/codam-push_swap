@@ -6,7 +6,7 @@
 #    By: omulder <omulder@student.codam.nl>           +#+                      #
 #                                                    +#+                       #
 #    Created: 2020/01/14 12:14:20 by omulder        #+#    #+#                 #
-#    Updated: 2020/01/25 19:59:02 by omulder       ########   odam.nl          #
+#    Updated: 2020/01/26 19:40:13 by omulder       ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,7 +14,8 @@ NAME = push_swap
 CHECKER = checker
 LIBFT= ./libft/libft.a
 CC = gcc
-FLAGS = -Wall -Werror -Wextra -g
+# FLAGS = -Wall -Werror -Wextra -g
+FLAGS = -g
 DEBUGFLAGS = -fsanitize=address -fno-omit-frame-pointer -g
 INCLUDES = -I./ -I./libft/ -I./inc -I../libft
 LINK = -L./libft -lft
@@ -22,7 +23,7 @@ VPATH = ./srcs-checker ./srcs-push_swap ./srcs-stack
 SRCSCHECK = checker
 SRCSSTACK = opp_p opp_r opp_rr opp_s stack
 SRCSPUSH = push_swap oplist_helpers opp_do opp_wrap_p opp_wrap_r opp_wrap_rr \
-opp_wrap_s stacks_helpers fake_sort stupid_sort less_stupid_sort
+opp_wrap_s stacks_helpers fake_sort stupid_sort less_stupid_sort quick_sort
 OBJCHECK := $(SRCSCHECK:%=%.o)
 OBJPUSH:= $(SRCSPUSH:%=%.o)
 OBJSTACK:= $(SRCSSTACK:%=%.o)

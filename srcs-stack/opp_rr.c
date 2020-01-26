@@ -6,7 +6,7 @@
 /*   By: omulder <omulder@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/01/14 13:52:07 by omulder        #+#    #+#                */
-/*   Updated: 2020/01/19 15:20:47 by omulder       ########   odam.nl         */
+/*   Updated: 2020/01/26 21:41:05 by omulder       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ void	opp_rra(t_stack **a)
 	t_stack	*ptr;
 	t_stack *second_last_ptr;
 
-	if (*a == NULL)
+	if (*a == NULL || ((*a)->next == NULL))
 		return ;
 	ptr = *a;
 	while (ptr->next != NULL)
@@ -36,7 +36,7 @@ void	opp_rrb(t_stack **b)
 	t_stack	*ptr;
 	t_stack *second_last_ptr;
 
-	if (*b == NULL)
+	if (*b == NULL || ((*b)->next == NULL))
 		return ;
 	ptr = *b;
 	while (ptr->next != NULL)
