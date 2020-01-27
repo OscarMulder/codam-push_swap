@@ -6,7 +6,7 @@
 /*   By: omulder <omulder@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/01/19 15:13:33 by omulder        #+#    #+#                */
-/*   Updated: 2020/01/27 16:50:18 by omulder       ########   odam.nl         */
+/*   Updated: 2020/01/27 18:41:01 by omulder       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,7 +65,7 @@ void	split_b(t_stacks *s, int min, int max, int pivot);
 */
 
 int		opp_do(t_stacks *s, t_opp op);
-
+char	*op_to_string(t_opp op);
 /*
 ** Operation wrappers
 */

@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   sort_inplace.c                                     :+:    :+:            */
+/*   sort_2_inplace.c                                   :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: omulder <omulder@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/01/27 16:18:23 by omulder        #+#    #+#                */
-/*   Updated: 2020/01/27 16:18:42 by omulder       ########   odam.nl         */
+/*   Updated: 2020/01/27 18:32:48 by omulder       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ void	sort_2_a(t_stacks *s)
 
 void	sort_2_b(t_stacks *s)
 {
-	ft_printf("CALLED: sort_2_a\n");
+	ft_printf("CALLED: sort_2_b\n");
 	if (s->b->pos < s->b->next->pos)
 	{
 		opp_do(s, PA);
