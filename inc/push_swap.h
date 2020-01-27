@@ -6,7 +6,7 @@
 /*   By: omulder <omulder@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/01/19 15:13:33 by omulder        #+#    #+#                */
-/*   Updated: 2020/01/27 15:03:26 by omulder       ########   odam.nl         */
+/*   Updated: 2020/01/27 16:50:18 by omulder       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,13 +49,16 @@ void	fake_sort(t_stacks *a);
 void	stupid_sort(t_stacks *s);
 void	less_stupid_sort(t_stacks *s);
 void	quick_sort(t_stacks *s);
-void	split_a(t_stacks *s, int min, int max);
 void	sort_2_a(t_stacks *s);
 void	sort_2_b(t_stacks *s);
 void	sort_2_a_push_b(t_stacks *s);
 void	sort_2_b_push_a(t_stacks *s);
 void	sort_3_a(t_stacks *s);
 void	sort_3_b(t_stacks *s);
+void	splitsort_a(t_stacks *s, int min, int max);
+void	splitsort_b(t_stacks *s, int min, int max);
+void	split_a(t_stacks *s, int min, int max, int pivot);
+void	split_b(t_stacks *s, int min, int max, int pivot);
 
 /*
 ** opp_do
