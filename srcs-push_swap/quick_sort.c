@@ -6,7 +6,7 @@
 /*   By: omulder <omulder@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/01/26 19:33:05 by omulder        #+#    #+#                */
-/*   Updated: 2020/01/27 18:47:28 by omulder       ########   odam.nl         */
+/*   Updated: 2020/01/27 21:29:36 by omulder       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,7 @@ void	split_a(t_stacks *s, int min, int max, int pivot)
 	rot = 0;
 	while (i < (pivot - min) && i + rot < max - min)
 	{
-		if (s->a->pos < pivot)
+		if (s->a->pos <= pivot)
 		{
 			opp_do(s, PB);
 			i++;
@@ -63,7 +63,7 @@ void	split_b(t_stacks *s, int min, int max, int pivot)
 
 	i = 0;
 	rot = 0;
-	while (i < (pivot - min) && i + rot < max - min)
+	while (i <= (pivot - min) && i + rot <= max - min)
 	{
 		if (s->b->pos > pivot)
 		{
@@ -99,17 +99,17 @@ void	splitsort_b(t_stacks *s, int min, int max)
 	print_stack(s->a);
 	ft_printf("------------------------------------------------------\nStack B\n");
 	print_stack(s->b);
-	if (max - min == 2)
+	if (max - min == 3)
 		sort_3_b(s);
-	else if (max - min == 1)
+	else if (max - min == 2)
 		sort_2_b(s);
 	else
 	{
 		split_b(s, min, max, pivot);
 		splitsort_b(s, min, pivot);
 		splitsort_a(s, pivot, max);
+		push_back(s, min, max, PA);
 	}
-	push_back(s, min, max, PA);
 }
 
 void	splitsort_a(t_stacks *s, int min, int max)
@@ -131,9 +131,9 @@ void	splitsort_a(t_stacks *s, int min, int max)
 		split_a(s, min, max, pivot);
 		splitsort_a(s, pivot, max);
 		splitsort_b(s, min, pivot);
+		if (max != s->total)
+			push_back(s, min, max, PB);
 	}
-	if (max != s->total)
-		push_back(s, min, max, PB);
 }
 
 void	quick_sort(t_stacks *s)

@@ -6,7 +6,7 @@
 /*   By: omulder <omulder@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/01/25 18:26:16 by omulder        #+#    #+#                */
-/*   Updated: 2020/01/25 18:44:21 by omulder       ########   odam.nl         */
+/*   Updated: 2020/01/27 20:49:19 by omulder       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,8 +48,8 @@ void	fake_sort(t_stacks *s)
 	int			i;
 
 	prevsmolboi = NULL;
-	i = 0;
-	while (i < s->size_a)
+	i = 1;
+	while (i <= s->size_a)
 	{
 		smolboi = s->a;
 		while (smolboi != NULL && smolboi->pos != -1)
