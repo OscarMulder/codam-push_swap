@@ -6,7 +6,7 @@
 /*   By: omulder <omulder@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/01/25 16:16:04 by omulder        #+#    #+#                */
-/*   Updated: 2020/01/25 17:20:15 by omulder       ########   odam.nl         */
+/*   Updated: 2020/01/28 16:19:25 by omulder       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,11 @@
 #include <stack.h>
 #include <stdlib.h>
 
+#include <libft.h> //rm
+
 int		opp_do(t_stacks *s, t_opp op)
 {
+	ft_printf("OPERATION: %s\n", op_to_string(op));
 	if (op == SA)
 		opp_wrap_sa(s);
 	else if (op == SB)
