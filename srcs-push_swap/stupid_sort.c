@@ -6,7 +6,7 @@
 /*   By: omulder <omulder@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/01/25 18:16:46 by omulder        #+#    #+#                */
-/*   Updated: 2020/01/25 18:56:07 by omulder       ########   odam.nl         */
+/*   Updated: 2020/02/01 20:05:04 by omulder       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ void		stupid_sort(t_stacks *s)
 	int		i;
 	int		total;
 
-	i = 0;
+	i = 1;
 	total = s->size_a;
 	while (i < total - 1)
 	{
