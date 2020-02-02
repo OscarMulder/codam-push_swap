@@ -6,7 +6,7 @@
 /*   By: omulder <omulder@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/01/14 12:35:38 by omulder        #+#    #+#                */
-/*   Updated: 2020/02/02 14:36:31 by omulder       ########   odam.nl         */
+/*   Updated: 2020/02/02 18:02:27 by omulder       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ void	print_stack(t_stack *stack)
 {
 	if (stack == NULL)
 		return ;
-	ft_printf("[ value: %d, pos: %d ]\n", stack->value, stack->pos);
+	ft_dprintf(2, "[ value: %d, pos: %d ]\n", stack->value, stack->pos);
 	print_stack(stack->next);
 }
 

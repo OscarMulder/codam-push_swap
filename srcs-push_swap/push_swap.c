@@ -6,7 +6,7 @@
 /*   By: omulder <omulder@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/01/19 15:22:41 by omulder        #+#    #+#                */
-/*   Updated: 2020/02/01 20:05:35 by omulder       ########   odam.nl         */
+/*   Updated: 2020/02/02 18:06:35 by omulder       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,8 +42,8 @@ int			main(int argc, char **argv)
 	s->total = s->size_a;
 	// print_stack(s->a);
 	fake_sort(s);
-	stupid_sort(s);
-	// quick_sort(s);
+	// stupid_sort(s);
+	quick_sort(s);
 	print_oplst(s->oplst);
 	//ft_printf("Nb. opps: %d\n", s->op_count);
 	// ft_printf("Stack A\n");
