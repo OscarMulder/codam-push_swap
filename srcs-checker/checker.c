@@ -6,7 +6,7 @@
 /*   By: omulder <omulder@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/01/14 10:30:57 by omulder        #+#    #+#                */
-/*   Updated: 2020/01/25 21:53:38 by omulder       ########   odam.nl         */
+/*   Updated: 2020/02/02 14:48:15 by omulder       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,6 +63,8 @@ static int	read_and_do_opps(t_stack **a, t_stack **b, int *op_count)
 			if (!do_opp(a, b, line))
 				return (0);
 			(*op_count)++;
+			// ft_printf("%12s\n", line);
+			// print_both_stacks(*a, *b);
 			free(line);
 		}
 	}
@@ -93,6 +95,6 @@ int			main(int argc, char **argv)
 	if (!read_and_do_opps(&a, &b, &op_count))
 		return (return_error());
 	ft_printf("Op_count: %d\n", op_count);
-	print_stack(a);
+	// print_stack(a);
 	return (check_stack(a, &count, argc));
 }
