@@ -6,7 +6,7 @@
 /*   By: omulder <omulder@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2019/02/05 07:43:01 by omulder        #+#    #+#                */
-/*   Updated: 2019/03/24 15:56:15 by omulder       ########   odam.nl         */
+/*   Updated: 2020/02/02 18:05:40 by omulder       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,6 +34,7 @@ typedef struct	s_fmt
 }				t_fmt;
 
 int				ft_dprintf(int fd, const char *format, ...);
+int				ft_eprintf(const char *format, ...);
 int				pf_isalpha(int c);
 int				pf_isdigit(int c);
 int				pf_atoi(const char *str);
