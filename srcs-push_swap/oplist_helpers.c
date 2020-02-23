@@ -6,7 +6,7 @@
 /*   By: omulder <omulder@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/01/25 17:06:57 by omulder        #+#    #+#                */
-/*   Updated: 2020/01/25 20:29:26 by omulder       ########   odam.nl         */
+/*   Updated: 2020/02/23 17:54:53 by omulder       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,6 +64,13 @@ char		*op_to_string(t_opp op)
 	else if (op == RRR)
 		return ("rrr");
 	return ("");
+}
+
+int			count_oplist(t_oplst *ptr)
+{
+	if (ptr == NULL)
+		return (0);
+	return (1 + count_oplist(ptr->next));
 }
 
 void		print_oplst(t_oplst *oplst)
