@@ -6,7 +6,7 @@
 /*   By: omulder <omulder@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/01/19 15:13:33 by omulder        #+#    #+#                */
-/*   Updated: 2020/02/23 18:29:11 by omulder       ########   odam.nl         */
+/*   Updated: 2020/02/23 19:52:39 by omulder       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,10 +64,13 @@ void	split_b(t_stacks *s, int min, int max, int pivot);
 ** Optimize
 */
 
-int		optimize_oplist(t_oplst *oplst);
+int		optimize_oplist(t_oplst **oplst);
 void	remove_leftover(t_oplst *ptr, t_oplst *end);
+int		optimize_push(t_oplst *ptr, t_oplst *first, int pusha, int pushb);
 int		optimize_rot(t_oplst *ptr, t_oplst *firstrot, int rota, int rotb);
-
+int		optimize_rev_rot(t_oplst *ptr, t_oplst *first, int rota, int rotb);
+int		optimize_rot_a(t_oplst *ptr, t_oplst *first, int rota, int rotb);
+int		optimize_rot_b(t_oplst *ptr, t_oplst *first, int rota, int rotb);
 /*
 ** opp_do
 */

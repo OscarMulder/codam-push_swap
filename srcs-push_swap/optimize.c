@@ -6,7 +6,7 @@
 /*   By: omulder <omulder@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/02/23 17:07:09 by omulder        #+#    #+#                */
-/*   Updated: 2020/02/23 18:28:43 by omulder       ########   odam.nl         */
+/*   Updated: 2020/02/23 20:22:32 by omulder       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,64 +22,52 @@ void	remove_leftover(t_oplst *ptr, t_oplst *end)
 	free(ptr);
 }
 
-void	handle_push_optimize(t_oplst *end, t_oplst *first, int pusha, int pushb)
+static void	free_2(t_oplst **oplst, t_oplst *ptr)
+{
+	free(ptr->next);
+	free(ptr);
+	*oplst = (*oplst)->next->next;
+}
+
+int			optimize_swaps(t_oplst **oplst)
 {
 	t_oplst *ptr;
 
-	ptr = first;
-	while (pusha > 0 && pushb > 0)
-	{
-		pusha--;
-		pushb--;
-	}
-	while (pusha > 0)
-	{
-		pusha--;
-		ptr->op = PA;
-		if (pusha > 0)
-			ptr = ptr->next;
-	}
-	while (pushb > 0)
-	{
-		pushb--;
-		ptr->op = PB;
-		if (pushb > 0)
-			ptr = ptr->next;
-	}
-	remove_leftover(ptr->next, end);
-	ptr->next = end;
-}
-
-int		optimize_push(t_oplst *ptr, t_oplst *first, int pusha, int pushb)
-{
+	ptr = *oplst;
 	if (ptr == NULL)
 		return (0);
-	if (first == NULL)
+	if (ptr->op == SA)
 	{
-		if (ptr->op == PA || ptr->op == PB)
-			first = ptr;
+		if (ptr->next != NULL && ptr->next->op == SA)
+			free_2(oplst, ptr);
 	}
-	if (ptr->op == PA)
-		pusha++;
-	else if (ptr->op == PB)
-		pushb++;
-	else if (first != NULL)
+	else if (ptr->op == SB)
 	{
-		if (pusha > 0 && pushb > 0)
-			handle_push_optimize(ptr, first, pusha, pushb);
-		first = NULL;
-		pusha = 0;
-		pushb = 0;
+		if (ptr->next != NULL && ptr->next->op == SB)
+			free_2(oplst, ptr);
 	}
-	if (optimize_push(ptr->next, first, pusha, pushb) == 0 && first != NULL
-		&& pusha > 0 && pushb > 0)
-		handle_push_optimize(ptr, first, pusha, pushb);
+	else if (ptr->op == SA || ptr->op == SB)
+	{
+		if (ptr->next != NULL && (ptr->next->op == SA || ptr->next->op == SB)
+			&& ptr->op != ptr->next->op)
+		{
+			ptr = ptr->next;
+			(*oplst)->next = ptr->next;
+			(*oplst)->op = SS;
+			free(ptr);
+		}
+	}
+	optimize_swaps(&((*oplst)->next));
 	return (1);
 }
 
-int		optimize_oplist(t_oplst *oplst)
+int		optimize_oplist(t_oplst **oplst)
 {
-	optimize_rot(oplst, NULL, 0, 0);
-	optimize_push(oplst, NULL, 0, 0);
+	// optimize_rot(*oplst, NULL, 0, 0);
+	// optimize_rev_rot(*oplst, NULL, 0, 0);
+	// optimize_rot_a(*oplst, NULL, 0, 0);
+	// optimize_rot_b(*oplst, NULL, 0, 0);
+	// optimize_swaps(oplst);
+	optimize_push(*oplst, NULL, 0, 0);
 	return (1);
 }
