@@ -6,7 +6,7 @@
 /*   By: omulder <omulder@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/01/26 19:33:05 by omulder        #+#    #+#                */
-/*   Updated: 2020/02/02 18:26:12 by omulder       ########   odam.nl         */
+/*   Updated: 2020/02/23 16:55:08 by omulder       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -103,14 +103,13 @@ void	splitsort_b(t_stacks *s, int min, int max)
 		sort_3_b(s);
 	else if (max - min == 2 && s->size_b > 1)
 		sort_2_b(s);
-	else
+	else if (max - min > 1)
 	{
 		split_b(s, min, max, pivot);
-		splitsort_a(s, pivot, max);
 		splitsort_b(s, min, pivot);
+		splitsort_a(s, pivot, max);
 		push_back(s, pivot, max, PB);
 	}
-	push_back(s, min, max, PA);
 }
 
 void	splitsort_a(t_stacks *s, int min, int max)
@@ -127,11 +126,12 @@ void	splitsort_a(t_stacks *s, int min, int max)
 		sort_3_a(s);
 	else if (max - min == 2 && s->size_a > 1)
 		sort_2_a(s);
-	else
+	else if (max - min > 1)
 	{
 		split_a(s, min, max, pivot);
 		splitsort_a(s, pivot, max);
 		splitsort_b(s, min, pivot);
+		push_back(s, min, pivot, PA);
 	}
 }
 
