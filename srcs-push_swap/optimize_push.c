@@ -6,7 +6,7 @@
 /*   By: omulder <omulder@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/02/23 19:17:08 by omulder        #+#    #+#                */
-/*   Updated: 2020/02/23 20:06:39 by omulder       ########   odam.nl         */
+/*   Updated: 2020/02/24 13:07:47 by omulder       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,16 +14,18 @@
 #include <libft.h>
 #include <stdlib.h>
 
-void	handle_push_optimize(t_oplst *end, t_oplst *first, int pusha, int pushb)
+void	handle_push_optimize(t_oplst **head, t_oplst *end, int pusha, int pushb)
 {
-	t_oplst *ptr;
+	t_oplst	*ptr;
+	int		preserve_count;
 
-	ptr = first;
+	ptr = *head;
 	while (pusha > 0 && pushb > 0)
 	{
 		pusha--;
 		pushb--;
 	}
+	preserve_count = pusha + pushb;
 	while (pusha > 0)
 	{
 		pusha--;
@@ -39,32 +41,34 @@ void	handle_push_optimize(t_oplst *end, t_oplst *first, int pusha, int pushb)
 			ptr = ptr->next;
 	}
 	remove_leftover(ptr->next, end);
-	ptr->next = end;
+	if (preserve_count == 0)
+	{
+		free(*head);
+		*head = end;
+	}
+	else
+		ptr->next = end;
 }
 
-int		optimize_push(t_oplst *ptr, t_oplst *first, int pusha, int pushb)
+void	optimize_push(t_oplst **head)
 {
-	if (ptr == NULL)
-		return (0);
-	if (first == NULL)
+	t_oplst	*end;
+	int		pusha;
+	int		pushb;
+
+	pusha = 0;
+	pushb = 0;
+	end = *head;
+	while (end != NULL && (end->op == PA || end->op == PB))
 	{
-		if (ptr->op == PA || ptr->op == PB)
-			first = ptr;
+		if (end->op == PA)
+			pusha++;
+		else
+			pushb++;
+		end = end->next;
 	}
-	if (ptr->op == PA)
-		pusha++;
-	else if (ptr->op == PB)
-		pushb++;
-	else if (first != NULL)
-	{
-		if (pusha > 0 && pushb > 0)
-			handle_push_optimize(ptr, first, pusha, pushb);
-		first = NULL;
-		pusha = 0;
-		pushb = 0;
-	}
-	if (optimize_push(ptr->next, first, pusha, pushb) == 0 && first != NULL
-		&& pusha > 0 && pushb > 0)
-		handle_push_optimize(ptr->next, first, pusha, pushb);
-	return (1);
+	if (pusha > 0 && pushb > 0)
+		handle_push_optimize(head, end, pusha, pushb);
+	if (end != NULL)
+		optimize_push(&end->next);
 }

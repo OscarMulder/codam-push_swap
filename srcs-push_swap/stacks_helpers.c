@@ -6,7 +6,7 @@
 /*   By: omulder <omulder@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/01/25 16:27:16 by omulder        #+#    #+#                */
-/*   Updated: 2020/01/25 17:51:14 by omulder       ########   odam.nl         */
+/*   Updated: 2020/02/24 14:04:25 by omulder       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,11 @@ int			add_op(t_stacks *s, int op)
 	if (s == NULL)
 		return (0);
 	ret = add_oplst_item(&(s->oplst), op);
+	if (ret == -1)
+	{
+		delete_stacks(&s);
+		exit(1);
+	}
 	if (ret == 1)
 		s->op_count++;
 	return (ret);
