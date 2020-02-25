@@ -6,30 +6,31 @@
 /*   By: omulder <omulder@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/02/23 18:04:00 by omulder        #+#    #+#                */
-/*   Updated: 2020/02/23 19:20:01 by omulder       ########   odam.nl         */
+/*   Updated: 2020/02/25 15:02:43 by omulder       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <push_swap.h>
 #include <stddef.h>
 
-static void	handle_rot_optimize(t_oplst *end, t_oplst *first, int rota, int rotb)
+static void	handle_rot_optimize(t_oplst **head, t_oplst *end, int rota, int rotb)
 {
 	t_oplst *ptr;
 
-	ptr = first;
+	ptr = *head;
 	while (rota > 0 && rotb > 0)
 	{
 		rota--;
 		rotb--;
 		ptr->op = RRR;
-		ptr = ptr->next;
+		if (rota > 0 || rotb > 0)
+			ptr = ptr->next;
 	}
 	while (rota > 0)
 	{
 		rota--;
 		ptr->op = RRA;
-		if (rota > 0 || rotb > 0)
+		if (rota > 0)
 			ptr = ptr->next;
 	}
 	while (rotb > 0)
@@ -43,29 +44,25 @@ static void	handle_rot_optimize(t_oplst *end, t_oplst *first, int rota, int rotb
 	ptr->next = end;
 }
 
-int			optimize_rev_rot(t_oplst *ptr, t_oplst *first, int rota, int rotb)
+void		optimize_rev_rot(t_oplst **head)
 {
-	if (ptr == NULL)
-		return (0);
-	if (first == NULL)
+	t_oplst	*end;
+	int		rota;
+	int		rotb;
+
+	rota = 0;
+	rotb = 0;
+	end = *head;
+	while (end != NULL && (end->op == RRA || end->op == RRB))
 	{
-		if (ptr->op == RRA || ptr->op == RRB)
-			first = ptr;
+		if (end->op == RRA)
+			rota++;
+		else
+			rotb++;
+		end = end->next;
 	}
-	if (ptr->op == RRA)
-		rota++;
-	else if (ptr->op == RRB)
-		rotb++;
-	else if (first != NULL)
-	{
-		if (rota > 0 && rotb > 0)
-			handle_rot_optimize(ptr, first, rota, rotb);
-		first = 0;
-		rota = 0;
-		rotb = 0;
-	}
-	if (optimize_rot(ptr->next, first, rota, rotb) == 0 && first != NULL
-		&& rota > 0 && rotb > 0)
-		handle_rot_optimize(ptr, first, rota, rotb);
-	return (1);
+	if (rota > 0 && rotb > 0)
+		handle_rot_optimize(head, end, rota, rotb);
+	if (end != NULL)
+		optimize_rev_rot(&end->next);
 }

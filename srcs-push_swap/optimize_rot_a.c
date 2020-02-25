@@ -6,7 +6,7 @@
 /*   By: omulder <omulder@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/02/23 18:04:00 by omulder        #+#    #+#                */
-/*   Updated: 2020/02/23 19:23:16 by omulder       ########   odam.nl         */
+/*   Updated: 2020/02/25 14:44:16 by omulder       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,7 +62,7 @@ int			optimize_rot_a(t_oplst *ptr, t_oplst *first, int rota, int rotb)
 		rota = 0;
 		rotb = 0;
 	}
-	if (optimize_rot(ptr->next, first, rota, rotb) == 0 && first != NULL
+	if (optimize_rot_a(ptr->next, first, rota, rotb) == 0 && first != NULL
 		&& rota > 0 && rotb > 0)
 		handle_rot_optimize(ptr, first, rota, rotb);
 	return (1);
