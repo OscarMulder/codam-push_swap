@@ -6,7 +6,7 @@
 /*   By: omulder <omulder@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/01/25 16:27:16 by omulder        #+#    #+#                */
-/*   Updated: 2020/02/25 16:28:33 by omulder       ########   odam.nl         */
+/*   Updated: 2020/02/25 18:52:44 by omulder       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -96,6 +96,7 @@ void		delete_stacks(t_stacks **s)
 	delete_stack(&((*s)->a));
 	delete_stack(&((*s)->b));
 	delete_oplst(&((*s)->oplst));
+	ft_memdel((void**)&((*s)->amirror));
 	free(*s);
 	*s = NULL;
 }

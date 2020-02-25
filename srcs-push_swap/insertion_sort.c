@@ -6,7 +6,7 @@
 /*   By: omulder <omulder@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/02/24 14:00:51 by omulder        #+#    #+#                */
-/*   Updated: 2020/02/25 18:31:30 by omulder       ########   odam.nl         */
+/*   Updated: 2020/02/25 18:49:36 by omulder       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -271,8 +271,8 @@ void	go_deeper(t_stacks *s, t_moves *moves)
 		do_best_move(dup, moves, i);
 		calc_moves(dup, &deep);
 		deep_best = find_best(dup, deep);
-		moves[i].best_deeper = moves[i].total + deep[deep_best].total;
-		ft_dprintf(2, "------- move: %d -> move.total: %d deep: %d -> deep.total: %d = best_deeper: %d\n", i, moves[i].total, deep_best, deep[deep_best].total, moves[i].best_deeper);
+		moves[i].best_deeper = moves[i].total + (deep[deep_best].total / 10);
+		// ft_dprintf(2, "------- move: %d -> move.total: %d deep: %d -> deep.total: %d = best_deeper: %d\n", i, moves[i].total, deep_best, deep[deep_best].total, moves[i].best_deeper);
 		delete_stacks(&dup);
 		ft_memdel((void**)&deep);
 		i++;
