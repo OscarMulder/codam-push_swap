@@ -6,7 +6,7 @@
 /*   By: omulder <omulder@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/01/19 15:13:33 by omulder        #+#    #+#                */
-/*   Updated: 2020/02/25 11:37:46 by omulder       ########   odam.nl         */
+/*   Updated: 2020/02/25 16:10:59 by omulder       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,6 +43,7 @@ typedef struct	s_moves
 	int		a_rot;
 	int		b_rot;
 	int		total;
+	int		best_deeper;
 }				t_moves;
 
 typedef struct	s_stacks {
@@ -88,8 +89,8 @@ void	insertion_sort(t_stacks *s);
 int		optimize_oplist(t_oplst **oplst);
 void	remove_leftover(t_oplst *ptr, t_oplst *end);
 void	optimize_push(t_oplst **head);
-int		optimize_rot(t_oplst *ptr, t_oplst *firstrot, int rota, int rotb);
-int		optimize_rev_rot(t_oplst *ptr, t_oplst *first, int rota, int rotb);
+void	optimize_rot(t_oplst **head);
+void	optimize_rev_rot(t_oplst **head);
 int		optimize_rot_a(t_oplst *ptr, t_oplst *first, int rota, int rotb);
 int		optimize_rot_b(t_oplst *ptr, t_oplst *first, int rota, int rotb);
 
@@ -132,5 +133,6 @@ int			count_oplist(t_oplst *ptr);
 t_stacks	*new_stacks(void);
 int			add_op(t_stacks *s, int op);
 void		delete_stacks(t_stacks **s);
+t_stacks	*dup_stacks(t_stacks *s);
 
 #endif
