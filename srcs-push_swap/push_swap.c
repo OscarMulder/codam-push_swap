@@ -6,7 +6,7 @@
 /*   By: omulder <omulder@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/01/19 15:22:41 by omulder        #+#    #+#                */
-/*   Updated: 2020/02/24 14:51:55 by omulder       ########   odam.nl         */
+/*   Updated: 2020/02/25 10:10:34 by omulder       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,6 +40,7 @@ int			main(int argc, char **argv)
 		s->size_a++;
 	}
 	s->total = s->size_a;
+	s->amirror = ft_memalloc(sizeof(char) * s->total);
 	fake_sort(s);
 	// quick_sort(s);
 	insertion_sort(s);

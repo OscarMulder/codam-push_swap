@@ -6,7 +6,7 @@
 /*   By: omulder <omulder@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/02/23 17:07:09 by omulder        #+#    #+#                */
-/*   Updated: 2020/02/24 21:28:51 by omulder       ########   odam.nl         */
+/*   Updated: 2020/02/25 11:58:16 by omulder       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,11 +63,11 @@ int			optimize_swaps(t_oplst **oplst)
 
 int		optimize_oplist(t_oplst **oplst)
 {
-	// optimize_rot(*oplst, NULL, 0, 0);
-	// optimize_rev_rot(*oplst, NULL, 0, 0);
-	// optimize_rot_a(*oplst, NULL, 0, 0);
-	// optimize_rot_b(*oplst, NULL, 0, 0);
-	// optimize_swaps(oplst);
+	optimize_rot(*oplst, NULL, 0, 0);
+	optimize_rev_rot(*oplst, NULL, 0, 0);
+	optimize_rot_a(*oplst, NULL, 0, 0);
+	optimize_rot_b(*oplst, NULL, 0, 0);
+	optimize_swaps(oplst);
 	optimize_push(oplst);
 	return (1);
 }
