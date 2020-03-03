@@ -6,7 +6,7 @@
 /*   By: omulder <omulder@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/01/25 16:27:16 by omulder        #+#    #+#                */
-/*   Updated: 2020/02/25 18:52:44 by omulder       ########   odam.nl         */
+/*   Updated: 2020/03/03 13:35:18 by omulder       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,8 +39,8 @@ t_stack		*dup_stack(t_stack *s)
 	while (s != NULL)
 	{
 		ptr->next = ft_memalloc(sizeof(t_stack));
-		if (ptr == NULL)
-			return (NULL);
+		if (ptr->next == NULL)
+			exit(return_error());
 		ft_memcpy(ptr->next, s, sizeof(t_stack));
 		s = s->next;
 		ptr = ptr->next;
@@ -64,11 +64,13 @@ t_stacks	*dup_stacks(t_stacks *s)
 	if (dup->amirror == NULL)
 		return (NULL);
 	ft_memcpy(dup->amirror, s->amirror, sizeof(char) * s->total);
-	dup->a = dup_stack(s->a);
-	dup->b = dup_stack(s->b);
+	if (s->a)
+		dup->a = dup_stack(s->a);
+	if (s->b)
+		dup->b = dup_stack(s->b);
 	if ((dup->size_a != 0 && dup->a == NULL) ||
 		(dup->size_b != 0 && dup->b == NULL))
-		return (NULL);
+		exit(return_error());
 	return (dup);
 }
 

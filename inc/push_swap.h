@@ -6,7 +6,7 @@
 /*   By: omulder <omulder@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/01/19 15:13:33 by omulder        #+#    #+#                */
-/*   Updated: 2020/02/25 16:10:59 by omulder       ########   odam.nl         */
+/*   Updated: 2020/03/03 13:45:38 by omulder       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,7 +43,6 @@ typedef struct	s_moves
 	int		a_rot;
 	int		b_rot;
 	int		total;
-	int		best_deeper;
 }				t_moves;
 
 typedef struct	s_stacks {
@@ -58,7 +57,11 @@ typedef struct	s_stacks {
 	t_oplst		*oplst;
 }				t_stacks;
 
+int		return_error(void);
+
+
 void	fake_sort(t_stacks *a);
+int		small_sort(t_stacks *s);
 void	stupid_sort(t_stacks *s);
 void	less_stupid_sort(t_stacks *s);
 void	quick_sort(t_stacks *s);
@@ -72,6 +75,7 @@ void	splitsort_a(t_stacks *s, int min, int max);
 void	splitsort_b(t_stacks *s, int min, int max);
 void	split_a(t_stacks *s, int min, int max, int pivot);
 void	split_b(t_stacks *s, int min, int max, int pivot);
+void	find_and_do_best_move(t_stacks *s);
 
 /*
 ** First, push 90% of A to B, leave a balanced 10% sorted on A

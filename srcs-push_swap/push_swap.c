@@ -6,7 +6,7 @@
 /*   By: omulder <omulder@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/01/19 15:22:41 by omulder        #+#    #+#                */
-/*   Updated: 2020/02/25 18:35:45 by omulder       ########   odam.nl         */
+/*   Updated: 2020/03/03 13:50:02 by omulder       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,10 +15,48 @@
 #include <stack.h>
 #include <stdlib.h>
 
-static int	return_error(void)
+int		return_error(void)
 {
 	ft_printf("Error\n");
 	return (1);
+}
+
+void		sort_and_print(t_stacks *s)
+{
+	t_stacks	*quick;
+	t_stacks	*insert;
+
+	quick = dup_stacks(s);
+	insert = dup_stacks(s);
+	if (quick == NULL || insert == NULL)
+	{
+		return_error();
+		exit(1);
+	}
+	if (small_sort(quick))
+	{
+		optimize_oplist(&(quick->oplst));
+		print_oplst(quick->oplst);
+		delete_stacks(&quick);
+		delete_stacks(&insert);
+		return ;
+	}
+	quick_sort(quick);
+	insertion_sort(insert);
+	optimize_oplist(&(quick->oplst));
+	optimize_oplist(&(insert->oplst));
+	if (count_oplist(quick->oplst) <= count_oplist(insert->oplst))
+	{
+		ft_dprintf(2, "QUICKSORT\n");
+		print_oplst(quick->oplst);
+	}
+	else
+	{
+		ft_dprintf(2, "INSERTIONSORT\n");
+		print_oplst(insert->oplst);
+	}
+	delete_stacks(&quick);
+	delete_stacks(&insert);
 }
 
 int			main(int argc, char **argv)
@@ -41,23 +79,10 @@ int			main(int argc, char **argv)
 	}
 	s->total = s->size_a;
 	s->amirror = ft_memalloc(sizeof(char) * s->total);
+	if (!s->amirror)
+		exit(return_error());
 	fake_sort(s);
-	// quick_sort(s);
-	insertion_sort(s);
-	// stupid_sort(s);
-	// print_oplst(s->oplst);
-	// ft_printf("------\n");
-	ft_dprintf(2, "Nb. opps: %d\n", count_oplist(s->oplst));
-	optimize_oplist(&(s->oplst));
-	ft_dprintf(2, "Nb. optimized opps: %d\n", count_oplist(s->oplst));
-	print_oplst(s->oplst);
+	sort_and_print(s);
 	delete_stacks(&s);
 	return (0);
 }
-
-	// print_stack(s->a);
-	// stupid_sort(s);
-	// ft_dprintf(2, "Stack A\n");
-	// print_stack(s->a);
-	// ft_dprintf(2, "------------------------------------------------------\nStack B\n");
-	// print_stack(s->b);
