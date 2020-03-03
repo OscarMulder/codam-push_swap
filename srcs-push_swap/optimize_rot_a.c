@@ -6,64 +6,71 @@
 /*   By: omulder <omulder@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/02/23 18:04:00 by omulder        #+#    #+#                */
-/*   Updated: 2020/02/25 14:44:16 by omulder       ########   odam.nl         */
+/*   Updated: 2020/03/03 16:47:37 by omulder       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <push_swap.h>
 #include <stddef.h>
 
-static void	handle_rot_optimize(t_oplst *end, t_oplst *first, int rota, int rotb)
+static void	set_rot_ops(t_oplst **ptr, int rota, int rotb)
 {
-	t_oplst *ptr;
+	while (rota > 0)
+	{
+		rota--;
+		(*ptr)->op = PA;
+		if (rota > 0)
+			*ptr = (*ptr)->next;
+	}
+	while (rotb > 0)
+	{
+		rotb--;
+		(*ptr)->op = PB;
+		if (rotb > 0)
+			*ptr = (*ptr)->next;
+	}
+}
 
-	ptr = first;
+static void	handle_rota_opti(t_oplst **head, t_oplst *end, int rota, int rotb)
+{
+	t_oplst	*ptr;
+
+	ptr = *head;
 	while (rota > 0 && rotb > 0)
 	{
 		rota--;
 		rotb--;
 	}
-	while (rota > 0)
-	{
-		rota--;
-		ptr->op = RA;
-		if (rota > 0)
-			ptr = ptr->next;
-	}
-	while (rotb > 0)
-	{
-		rotb--;
-		ptr->op = RRA;
-		if (rotb > 0)
-			ptr = ptr->next;
-	}
+	set_rot_ops(&ptr, rota, rotb);
 	remove_leftover(ptr->next, end);
-	ptr->next = end;
+	if (rota + rotb == 0)
+	{
+		free(*head);
+		*head = end;
+	}
+	else
+		ptr->next = end;
 }
 
-int			optimize_rot_a(t_oplst *ptr, t_oplst *first, int rota, int rotb)
+void		optimize_rot_a(t_oplst **head)
 {
-	if (ptr == NULL)
-		return (0);
-	if (first == NULL)
+	t_oplst	*end;
+	int		rota;
+	int		rotb;
+
+	rota = 0;
+	rotb = 0;
+	end = *head;
+	while (end != NULL && (end->op == RA || end->op == RRA))
 	{
-		if (ptr->op == RA || ptr->op == RRA)
-			first = ptr;
+		if (end->op == RA)
+			rota++;
+		else
+			rotb++;
+		end = end->next;
 	}
-	if (ptr->op == RA)
-		rota++;
-	else if (ptr->op == RRA)
-		rotb++;
-	else if (first != NULL)
-	{
-		if (rota > 0 && rotb > 0)
-			handle_rot_optimize(ptr, first, rota, rotb);
-		first = 0;
-		rota = 0;
-		rotb = 0;
-	}
-	if (optimize_rot_a(ptr->next, first, rota, rotb) == 0 && first != NULL
-		&& rota > 0 && rotb > 0)
-		handle_rot_optimize(ptr, first, rota, rotb);
-	return (1);
+	if (rota > 0 && rotb > 0)
+		handle_rota_opti(head, end, rota, rotb);
+	if (end != NULL)
+		optimize_rot_a(&end->next);
 }

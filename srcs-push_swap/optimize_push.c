@@ -6,7 +6,7 @@
 /*   By: omulder <omulder@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/02/23 19:17:08 by omulder        #+#    #+#                */
-/*   Updated: 2020/02/25 14:50:07 by omulder       ########   odam.nl         */
+/*   Updated: 2020/03/03 14:59:04 by omulder       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,10 +14,27 @@
 #include <libft.h>
 #include <stdlib.h>
 
+void	set_push_ops(t_oplst **ptr, int pusha, int pushb)
+{
+	while (pusha > 0)
+	{
+		pusha--;
+		(*ptr)->op = PA;
+		if (pusha > 0)
+			*ptr = (*ptr)->next;
+	}
+	while (pushb > 0)
+	{
+		pushb--;
+		(*ptr)->op = PB;
+		if (pushb > 0)
+			*ptr = (*ptr)->next;
+	}
+}
+
 void	handle_push_optimize(t_oplst **head, t_oplst *end, int pusha, int pushb)
 {
 	t_oplst	*ptr;
-	int		preserve_count;
 
 	ptr = *head;
 	while (pusha > 0 && pushb > 0)
@@ -25,23 +42,9 @@ void	handle_push_optimize(t_oplst **head, t_oplst *end, int pusha, int pushb)
 		pusha--;
 		pushb--;
 	}
-	preserve_count = pusha + pushb;
-	while (pusha > 0)
-	{
-		pusha--;
-		ptr->op = PA;
-		if (pusha > 0)
-			ptr = ptr->next;
-	}
-	while (pushb > 0)
-	{
-		pushb--;
-		ptr->op = PB;
-		if (pushb > 0)
-			ptr = ptr->next;
-	}
+	set_push_ops(&ptr, pusha, pushb);
 	remove_leftover(ptr->next, end);
-	if (preserve_count == 0)
+	if (pusha + pushb == 0)
 	{
 		free(*head);
 		*head = end;
