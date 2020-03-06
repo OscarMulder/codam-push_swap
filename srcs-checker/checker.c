@@ -6,7 +6,7 @@
 /*   By: omulder <omulder@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/01/14 10:30:57 by omulder        #+#    #+#                */
-/*   Updated: 2020/03/06 14:09:48 by omulder       ########   odam.nl         */
+/*   Updated: 2020/03/06 15:12:37 by omulder       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,6 +58,8 @@ static int	read_and_do_opps(t_stack **a, t_stack **b, int *op_count)
 	while (ret == 1)
 	{
 		ret = get_next_line(STDIN_FILENO, &line);
+		if (*op_count == 0 && ret == 1 && *line == '\0')
+			return (1);
 		if (ret > 0)
 		{
 			if (!do_opp(a, b, line))
