@@ -6,7 +6,7 @@
 /*   By: omulder <omulder@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/03/03 12:51:11 by omulder        #+#    #+#                */
-/*   Updated: 2020/03/03 14:05:24 by omulder       ########   odam.nl         */
+/*   Updated: 2020/03/06 15:02:15 by omulder       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -84,6 +84,30 @@ int		find_max(t_stack *a)
 	return (max);
 }
 
+void	rot_a_sorted(t_stacks *s)
+{
+	int		i;
+	t_stack	*ptr;
+
+	ptr = s->a;
+	i = 0;
+	while (ptr && ptr->pos != 1)
+	{
+		i++;
+		ptr = ptr->next;
+	}
+	if (i <= s->size_a / 2)
+	{
+		while (s->a->pos != 1)
+			opp_do(s, RA);
+	}
+	else
+	{
+		while (s->a->pos != 1)
+			opp_do(s, RRA);
+	}
+}
+
 void	sort_4(t_stacks *s)
 {
 	int		min;
@@ -97,8 +121,7 @@ void	sort_4(t_stacks *s)
 	sort_3(s, min, mid, max);
 	set_sorted(s);
 	find_and_do_best_move(s);
-	while (s->a->pos != 1)
-		opp_do(s, RA);
+	rot_a_sorted(s);
 }
 
 void	sort_5(t_stacks *s)
@@ -116,8 +139,7 @@ void	sort_5(t_stacks *s)
 	set_sorted(s);
 	find_and_do_best_move(s);
 	find_and_do_best_move(s);
-	while (s->a->pos != 1)
-		opp_do(s, RA);
+	rot_a_sorted(s);
 }
 
 int		small_sort(t_stacks *s)
