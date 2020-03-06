@@ -6,7 +6,7 @@
 /*   By: omulder <omulder@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/01/19 15:22:41 by omulder        #+#    #+#                */
-/*   Updated: 2020/03/03 14:13:31 by omulder       ########   odam.nl         */
+/*   Updated: 2020/03/06 14:10:14 by omulder       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,7 +49,7 @@ void		sort_and_print(t_stacks *s)
 		small->op_count = count_oplist(small->oplst);
 		if (small->op_count <= quick->op_count && small->op_count <= insert->op_count)
 		{
-			ft_dprintf(2, "SMALLSORT\n");
+			// ft_dprintf(2, "SMALLSORT\n");
 			print_oplst(small->oplst);
 		}
 		else
@@ -60,12 +60,12 @@ void		sort_and_print(t_stacks *s)
 	}
 	if (!smoll && quick->op_count <= insert->op_count)
 	{
-		ft_dprintf(2, "QUICKSORT\n");
+		// ft_dprintf(2, "QUICKSORT\n");
 		print_oplst(quick->oplst);
 	}
 	else if (!smoll)
 	{
-		ft_dprintf(2, "INSERTIONSORT\n");
+		// ft_dprintf(2, "INSERTIONSORT\n");
 		print_oplst(insert->oplst);
 	}
 	delete_stacks(&quick);

@@ -6,11 +6,12 @@
 /*   By: omulder <omulder@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/02/23 18:04:00 by omulder        #+#    #+#                */
-/*   Updated: 2020/03/03 16:47:37 by omulder       ########   odam.nl         */
+/*   Updated: 2020/03/06 14:26:35 by omulder       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <push_swap.h>
+#include <stdlib.h>
 #include <stddef.h>
 
 static void	set_rot_ops(t_oplst **ptr, int rota, int rotb)
@@ -18,14 +19,14 @@ static void	set_rot_ops(t_oplst **ptr, int rota, int rotb)
 	while (rota > 0)
 	{
 		rota--;
-		(*ptr)->op = PA;
+		(*ptr)->op = RA;
 		if (rota > 0)
 			*ptr = (*ptr)->next;
 	}
 	while (rotb > 0)
 	{
 		rotb--;
-		(*ptr)->op = PB;
+		(*ptr)->op = RRA;
 		if (rotb > 0)
 			*ptr = (*ptr)->next;
 	}

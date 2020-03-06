@@ -6,7 +6,7 @@
 /*   By: omulder <omulder@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/01/19 15:13:33 by omulder        #+#    #+#                */
-/*   Updated: 2020/03/03 15:02:05 by omulder       ########   odam.nl         */
+/*   Updated: 2020/03/06 14:28:11 by omulder       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -95,7 +95,7 @@ void	optimize_push(t_oplst **head);
 void	optimize_rot(t_oplst **head);
 void	optimize_rev_rot(t_oplst **head);
 void	optimize_rot_a(t_oplst **head);
-int		optimize_rot_b(t_oplst *ptr, t_oplst *first, int rota, int rotb);
+void	optimize_rot_b(t_oplst **head);
 
 /*
 ** opp_do
