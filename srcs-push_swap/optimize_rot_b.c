@@ -6,7 +6,7 @@
 /*   By: omulder <omulder@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/02/23 18:04:00 by omulder        #+#    #+#                */
-/*   Updated: 2020/03/06 14:27:58 by omulder       ########   odam.nl         */
+/*   Updated: 2020/03/06 14:41:09 by omulder       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,5 +73,5 @@ void		optimize_rot_b(t_oplst **head)
 	if (rota > 0 && rotb > 0)
 		handle_rota_opti(head, end, rota, rotb);
 	if (end != NULL)
-		optimize_rot_a(&end->next);
+		optimize_rot_b(&end->next);
 }

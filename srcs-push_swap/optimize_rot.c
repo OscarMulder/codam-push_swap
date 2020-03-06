@@ -6,13 +6,13 @@
 /*   By: omulder <omulder@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/02/23 18:04:00 by omulder        #+#    #+#                */
-/*   Updated: 2020/03/06 14:29:18 by omulder       ########   odam.nl         */
+/*   Updated: 2020/03/06 14:44:59 by omulder       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <push_swap.h>
-#include <stdlib.h>
 #include <stddef.h>
+#include <stdlib.h>
 
 static void	set_rot_ops(t_oplst **ptr, int rota, int rotb)
 {
@@ -26,7 +26,7 @@ static void	set_rot_ops(t_oplst **ptr, int rota, int rotb)
 	while (rotb > 0)
 	{
 		rotb--;
-		(*ptr)->op = RRA;
+		(*ptr)->op = RB;
 		if (rotb > 0)
 			*ptr = (*ptr)->next;
 	}
@@ -41,19 +41,16 @@ static void	handle_rota_opti(t_oplst **head, t_oplst *end, int rota, int rotb)
 	{
 		rota--;
 		rotb--;
+		ptr->op = RR;
+		if (rota > 0 || rotb > 0)
+			ptr = ptr->next;
 	}
 	set_rot_ops(&ptr, rota, rotb);
 	remove_leftover(ptr->next, end);
-	if (rota + rotb == 0)
-	{
-		free(*head);
-		*head = end;
-	}
-	else
-		ptr->next = end;
+	ptr->next = end;
 }
 
-void		optimize_rot_a(t_oplst **head)
+void		optimize_rot(t_oplst **head)
 {
 	t_oplst	*end;
 	int		rota;
@@ -62,7 +59,7 @@ void		optimize_rot_a(t_oplst **head)
 	rota = 0;
 	rotb = 0;
 	end = *head;
-	while (end != NULL && (end->op == RA || end->op == RRA))
+	while (end != NULL && (end->op == RA || end->op == RB))
 	{
 		if (end->op == RA)
 			rota++;
@@ -73,5 +70,5 @@ void		optimize_rot_a(t_oplst **head)
 	if (rota > 0 && rotb > 0)
 		handle_rota_opti(head, end, rota, rotb);
 	if (end != NULL)
-		optimize_rot_a(&end->next);
+		optimize_rot(&end->next);
 }
