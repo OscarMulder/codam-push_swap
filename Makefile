@@ -6,7 +6,7 @@
 #    By: omulder <omulder@student.codam.nl>           +#+                      #
 #                                                    +#+                       #
 #    Created: 2020/01/14 12:14:20 by omulder        #+#    #+#                 #
-#    Updated: 2020/03/03 13:08:23 by omulder       ########   odam.nl          #
+#    Updated: 2020/03/06 16:22:30 by omulder       ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,7 +14,7 @@ NAME = push_swap
 CHECKER = checker
 LIBFT= ./libft/libft.a
 CC = gcc
-# FLAGS = -Wall -Werror -Wextra -g
+FLAGS = -Wall -Werror -Wextra
 FLAGS = -g
 DEBUGFLAGS = -fsanitize=address -fno-omit-frame-pointer -g
 INCLUDES = -I./ -I./libft/ -I./inc -I../libft
@@ -23,9 +23,10 @@ VPATH = ./srcs-checker ./srcs-push_swap ./srcs-stack
 SRCSCHECK = checker
 SRCSSTACK = opp_p opp_r opp_rr opp_s stack
 SRCSPUSH = push_swap oplist_helpers opp_do opp_wrap_p opp_wrap_r opp_wrap_rr \
-opp_wrap_s stacks_helpers fake_sort stupid_sort less_stupid_sort quick_sort \
+opp_wrap_s stacks_helpers add_sorted_positions stupid_sort quick_sort \
 sort_2_inplace sort_3_inplace optimize optimize_rot optimize_push \
-optimize_rev_rot optimize_rot_a optimize_rot_b insertion_sort small_sort 
+optimize_rev_rot optimize_rot_a optimize_rot_b insertion_sort small_sort \
+insertion_helpers prepare_inserting 
 OBJCHECK := $(SRCSCHECK:%=%.o)
 OBJPUSH:= $(SRCSPUSH:%=%.o)
 OBJSTACK:= $(SRCSSTACK:%=%.o)

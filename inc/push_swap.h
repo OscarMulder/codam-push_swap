@@ -6,7 +6,7 @@
 /*   By: omulder <omulder@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/01/19 15:13:33 by omulder        #+#    #+#                */
-/*   Updated: 2020/03/06 14:28:11 by omulder       ########   odam.nl         */
+/*   Updated: 2020/03/06 16:01:16 by omulder       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,11 +59,12 @@ typedef struct	s_stacks {
 
 int		return_error(void);
 
-void	fake_sort(t_stacks *a);
+void	add_sorted_positions(t_stacks *a);
 int		small_sort(t_stacks *s);
 void	stupid_sort(t_stacks *s);
 void	less_stupid_sort(t_stacks *s);
 void	quick_sort(t_stacks *s);
+void	rot_a_sorted(t_stacks *s);
 void	sort_2_a(t_stacks *s);
 void	sort_2_b(t_stacks *s);
 void	sort_2_a_push_b(t_stacks *s);
@@ -84,6 +85,12 @@ void	set_sorted(t_stacks *s);
 ** Rotate stack A so the smallest number is at the top.
 */
 void	insertion_sort(t_stacks *s);
+
+void	set_sorted(t_stacks *s);
+void	prepare_inserting(t_stacks *s);
+int		get_a_rot_count(t_stacks *s, int bpos);
+void	do_best_move(t_stacks *s, int a, int b);
+int		find_best(t_stacks *s, t_moves *moves);
 
 /*
 ** Optimize

@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   fake_sort.c                                        :+:    :+:            */
+/*   add_sorted_positions.c                             :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: omulder <omulder@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2020/01/25 18:26:16 by omulder        #+#    #+#                */
-/*   Updated: 2020/01/27 20:49:19 by omulder       ########   odam.nl         */
+/*   Created: 2020/03/06 15:19:26 by omulder        #+#    #+#                */
+/*   Updated: 2020/03/06 16:04:34 by omulder       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,48 +15,44 @@
 #include <stack.h>
 #include <stdlib.h>
 
-/*
-** Doesn't really sort, just adds positions, should have better name.
-*/
-
-static void		loop_bois(t_stack **smolboi, t_stack **prevsmolboi)
+static void	find_next_smal(t_stack **smal, t_stack **prev_smal)
 {
 	t_stack		*ptr;
 
-	ptr = *smolboi;
+	ptr = *smal;
 	while (ptr != NULL)
 	{
-		if (*prevsmolboi == NULL)
+		if (*prev_smal == NULL)
 		{
-			if (ptr->value < (*smolboi)->value)
-				*smolboi = ptr;
+			if (ptr->value < (*smal)->value)
+				*smal = ptr;
 		}
 		else
 		{
-			if (ptr->value > (*prevsmolboi)->value &&
-				ptr->value < (*smolboi)->value)
-				*smolboi = ptr;
+			if (ptr->value > (*prev_smal)->value &&
+				ptr->value < (*smal)->value)
+				*smal = ptr;
 		}
 		ptr = ptr->next;
 	}
 }
 
-void	fake_sort(t_stacks *s)
+void		add_sorted_positions(t_stacks *s)
 {
-	t_stack		*smolboi;
-	t_stack		*prevsmolboi;
+	t_stack		*smal;
+	t_stack		*prev_smal;
 	int			i;
 
-	prevsmolboi = NULL;
+	prev_smal = NULL;
 	i = 1;
 	while (i <= s->size_a)
 	{
-		smolboi = s->a;
-		while (smolboi != NULL && smolboi->pos != -1)
-			smolboi = smolboi->next;
-		loop_bois(&smolboi, &prevsmolboi);
-		smolboi->pos = i;
-		prevsmolboi = smolboi;
+		smal = s->a;
+		while (smal != NULL && smal->pos != -1)
+			smal = smal->next;
+		find_next_smal(&smal, &prev_smal);
+		smal->pos = i;
+		prev_smal = smal;
 		i++;
 	}
 }

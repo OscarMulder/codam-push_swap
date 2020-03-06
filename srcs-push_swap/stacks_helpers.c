@@ -6,7 +6,7 @@
 /*   By: omulder <omulder@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/01/25 16:27:16 by omulder        #+#    #+#                */
-/*   Updated: 2020/03/03 13:35:18 by omulder       ########   odam.nl         */
+/*   Updated: 2020/03/06 16:23:24 by omulder       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -93,7 +93,7 @@ int			add_op(t_stacks *s, int op)
 
 void		delete_stacks(t_stacks **s)
 {
-	if (s == NULL)
+	if (s == NULL || *s == NULL)
 		return ;
 	delete_stack(&((*s)->a));
 	delete_stack(&((*s)->b));
