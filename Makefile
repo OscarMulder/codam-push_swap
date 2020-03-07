@@ -6,7 +6,7 @@
 #    By: omulder <omulder@student.codam.nl>           +#+                      #
 #                                                    +#+                       #
 #    Created: 2020/01/14 12:14:20 by omulder        #+#    #+#                 #
-#    Updated: 2020/03/07 18:13:07 by omulder       ########   odam.nl          #
+#    Updated: 2020/03/07 18:24:33 by omulder       ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
@@ -20,7 +20,7 @@ INCLUDES = -I./ -I./libft/ -I./inc -I../libft
 LINK = -L./libft -lft
 VPATH = ./srcs-checker ./srcs-push_swap ./srcs-stack
 SRCSCHECK = checker
-SRCSSTACK = opp_p opp_r opp_rr opp_s stack
+SRCSSTACK = opp_p opp_r opp_rr opp_s stack stack_checker
 SRCSPUSH = push_swap oplist_helpers opp_do opp_wrap_p opp_wrap_r opp_wrap_rr \
 opp_wrap_s stacks_helpers add_sorted_positions quick_sort push_back \
 sort_2_inplace sort_3_inplace optimize optimize_rot optimize_push \
