@@ -6,7 +6,7 @@
 /*   By: omulder <omulder@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/03/06 15:37:35 by omulder        #+#    #+#                */
-/*   Updated: 2020/03/06 16:02:50 by omulder       ########   odam.nl         */
+/*   Updated: 2020/03/07 17:44:33 by omulder       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,14 +20,14 @@ static int	get_dividor(t_stacks *s)
 		return (2);
 	if (s->total <= 20)
 		return (4);
-	if (s->total <= 50)
+	if (s->total <= 60)
 		return (5);
-	if (s->total <= 100)
+	if (s->total <= 250)
 		return (10);
-	if (s->total <= 500)
-		return (15);
+	if (s->total <= 750)
+		return (25);
 	else
-		return (15);
+		return (40);
 	return (10);
 }
 

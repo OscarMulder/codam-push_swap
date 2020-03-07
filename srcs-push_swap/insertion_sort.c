@@ -6,7 +6,7 @@
 /*   By: omulder <omulder@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/02/24 14:00:51 by omulder        #+#    #+#                */
-/*   Updated: 2020/03/06 16:51:00 by omulder       ########   odam.nl         */
+/*   Updated: 2020/03/07 18:02:03 by omulder       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,38 +14,14 @@
 #include <libft.h>
 #include <stddef.h>
 
-static void	calc_reverse(t_stacks *s, t_stack *bptr, t_moves *moves, int i)
-{
-	moves[i].b_rot = i - s->size_b;
-	if (bptr->pos - 1 < s->atop)
-	{
-		if (moves[i].a_rot > 0 - (moves[i].b_rot))
-			moves[i].total = moves[i].a_rot + (moves[i].b_rot);
-		else
-			moves[i].total = 0 - (moves[i].b_rot) - moves[i].a_rot;
-	}
-	else
-		moves[i].total = moves[i].a_rot - (moves[i].b_rot);
-}
-
 static void	calc_move(t_stacks *s, t_stack *bptr, t_moves *moves, int i)
 {
 	moves[i].a_rot = get_a_rot_count(s, bptr->pos);
-	if (i < s->size_b / 2)
-	{
+	if (i <= s->size_b / 2)
 		moves[i].b_rot = i;
-		if (bptr->pos - 1 < s->atop)
-		{
-			if (moves[i].a_rot > i)
-				moves[i].total = moves[i].a_rot - i;
-			else
-				moves[i].total = i - moves[i].a_rot;
-		}
-		else
-			moves[i].total = moves[i].a_rot + i;
-	}
 	else
-		calc_reverse(s, bptr, moves, i);
+		moves[i].b_rot = i - s->size_b;
+	moves[i].total = ft_abs(moves[i].a_rot) + ft_abs(moves[i].b_rot);
 }
 
 static void	calc_moves(t_stacks *s, t_moves **moves)
@@ -71,7 +47,7 @@ static void	calc_moves(t_stacks *s, t_moves **moves)
 	}
 }
 
-void	find_and_do_best_move(t_stacks *s)
+void		find_and_do_best_move(t_stacks *s)
 {
 	t_moves		*moves;
 	int			best;
@@ -82,7 +58,7 @@ void	find_and_do_best_move(t_stacks *s)
 	free(moves);
 }
 
-void	insertion_sort(t_stacks *s)
+void		insertion_sort(t_stacks *s)
 {
 	int		first_away;
 
