@@ -6,7 +6,7 @@
 /*   By: omulder <omulder@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/03/03 12:51:11 by omulder        #+#    #+#                */
-/*   Updated: 2020/03/06 16:49:57 by omulder       ########   odam.nl         */
+/*   Updated: 2020/03/07 18:05:22 by omulder       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,100 +15,41 @@
 #include <stack.h>
 #include <stdlib.h>
 
-void	sort_2(t_stacks *s)
+static void	sort_2(t_stacks *s)
 {
 	if (s->a->pos > s->a->next->pos)
 		opp_do(s, SA);
 }
 
-void	sort_3(t_stacks *s, int min, int mid, int max)
+static void	sort_3(t_stacks *s, int min, int mid, int max)
 {
-	if (s->a->pos == min && s->a->next->pos == mid && s->a->next->next->pos == max)
+	if (s->a->pos == min && s->a->next->pos == mid
+	&& s->a->next->next->pos == max)
 		return ;
-	if (s->a->pos == mid && s->a->next->pos == max && s->a->next->next->pos == min)
+	else if (s->a->pos == mid && s->a->next->pos == max
+	&& s->a->next->next->pos == min)
 		opp_do(s, RRA);
-	if (s->a->pos == max && s->a->next->pos == mid && s->a->next->next->pos == min)
+	else if (s->a->pos == max && s->a->next->pos == mid
+	&& s->a->next->next->pos == min)
 	{
 		opp_do(s, SA);
 		opp_do(s, RRA);
-		return ;
 	}
-	if (s->a->pos == mid && s->a->next->pos == min && s->a->next->next->pos == max)
+	else if (s->a->pos == mid && s->a->next->pos == min
+	&& s->a->next->next->pos == max)
 		opp_do(s, SA);
-	if (s->a->pos == min && s->a->next->pos == max && s->a->next->next->pos == mid)
+	else if (s->a->pos == min && s->a->next->pos == max
+	&& s->a->next->next->pos == mid)
 	{
 		opp_do(s, RRA);
 		opp_do(s, SA);
-		return ;
 	}
-	if (s->a->pos == max && s->a->next->pos == min && s->a->next->next->pos == mid)
+	else if (s->a->pos == max && s->a->next->pos == min
+	&& s->a->next->next->pos == mid)
 		opp_do(s, RA);
 }
 
-int		find_min(t_stack *a)
-{
-	int		min;
-
-	min = a->pos;
-	while (a != NULL)
-	{
-		if (a->pos < min)
-			min = a->pos;
-		a = a->next;
-	}
-	return (min);
-}
-
-int		find_mid(t_stack *a, int min, int max)
-{
-	while (a != NULL)
-	{
-		if (a->pos != min && a->pos != max)
-			return (a->pos);
-		a = a->next;
-	}
-	return (-1);
-}
-
-int		find_max(t_stack *a)
-{
-	int		max;
-
-	max = a->pos;
-	while (a != NULL)
-	{
-		if (a->pos > max)
-			max = a->pos;
-		a = a->next;
-	}
-	return (max);
-}
-
-void	rot_a_sorted(t_stacks *s)
-{
-	int		i;
-	t_stack	*ptr;
-
-	ptr = s->a;
-	i = 0;
-	while (ptr && ptr->pos != 1)
-	{
-		i++;
-		ptr = ptr->next;
-	}
-	if (i <= s->size_a / 2)
-	{
-		while (s->a->pos != 1)
-			opp_do(s, RA);
-	}
-	else
-	{
-		while (s->a->pos != 1)
-			opp_do(s, RRA);
-	}
-}
-
-void	sort_4(t_stacks *s)
+static void	sort_4(t_stacks *s)
 {
 	int		min;
 	int		mid;
@@ -124,7 +65,7 @@ void	sort_4(t_stacks *s)
 	rot_a_sorted(s);
 }
 
-void	sort_5(t_stacks *s)
+static void	sort_5(t_stacks *s)
 {
 	int		min;
 	int		mid;
@@ -142,7 +83,7 @@ void	sort_5(t_stacks *s)
 	rot_a_sorted(s);
 }
 
-int		small_sort(t_stacks *s)
+int			small_sort(t_stacks *s)
 {
 	if (s->total == 2)
 		sort_2(s);

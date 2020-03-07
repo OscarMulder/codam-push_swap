@@ -6,7 +6,7 @@
 /*   By: omulder <omulder@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/01/27 16:19:08 by omulder        #+#    #+#                */
-/*   Updated: 2020/02/23 17:01:14 by omulder       ########   odam.nl         */
+/*   Updated: 2020/03/07 18:05:51 by omulder       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,9 +20,8 @@ void	sort_3_a(t_stacks *s)
 	int		is_lowest;
 
 	is_lowest = 0;
-	// ft_dprintf(2, "CALLED: sort_3_a\n");
 	if (s->a->pos < s->a->next->pos && s->a->next->pos < s->a->next->next->pos)
-		return ; // 1 2 3
+		return ;
 	if (s->a->next->pos > s->a->next->next->pos && s->a->pos > s->a->next->next->pos)
 	{
 		opp_do(s, PB);
@@ -30,14 +29,13 @@ void	sort_3_a(t_stacks *s)
 		opp_do(s, RA);
 		sort_2_b_push_a(s);
 		opp_do(s, RRA);
-		return ; // 3 2 1 && 2 3 1
+		return ;
 	}
 	if (s->a->pos > s->a->next->pos && s->a->next->pos < s->a->next->next->pos && s->a->pos < s->a->next->next->pos)
 	{
 		opp_do(s, SA);
-		return ; // 2 1 3
+		return ;
 	}
-	// 1 3 2 && 3 1 2
 	if (s->a->pos < s->a->next->pos)
 		is_lowest = 1;
 	opp_do(s, RA);
