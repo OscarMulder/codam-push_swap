@@ -6,15 +6,14 @@
 /*   By: omulder <omulder@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/02/23 17:07:09 by omulder        #+#    #+#                */
-/*   Updated: 2020/03/06 15:06:46 by omulder       ########   odam.nl         */
+/*   Updated: 2020/03/07 18:32:21 by omulder       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <push_swap.h>
-#include <libft.h>
 #include <stdlib.h>
 
-void	remove_leftover(t_oplst *ptr, t_oplst *end)
+void		remove_leftover(t_oplst *ptr, t_oplst *end)
 {
 	if (ptr == NULL || ptr == end)
 		return ;
@@ -22,52 +21,12 @@ void	remove_leftover(t_oplst *ptr, t_oplst *end)
 	free(ptr);
 }
 
-static void	free_2(t_oplst **oplst, t_oplst *ptr)
-{
-	free(ptr->next);
-	free(ptr);
-	*oplst = (*oplst)->next->next;
-}
-
-int			optimize_swaps(t_oplst **oplst)
-{
-	t_oplst *ptr;
-
-	ptr = *oplst;
-	if (ptr == NULL)
-		return (0);
-	if (ptr->op == SA)
-	{
-		if (ptr->next != NULL && ptr->next->op == SA)
-			free_2(oplst, ptr);
-	}
-	else if (ptr->op == SB)
-	{
-		if (ptr->next != NULL && ptr->next->op == SB)
-			free_2(oplst, ptr);
-	}
-	else if (ptr->op == SA || ptr->op == SB)
-	{
-		if (ptr->next != NULL && (ptr->next->op == SA || ptr->next->op == SB)
-			&& ptr->op != ptr->next->op)
-		{
-			ptr = ptr->next;
-			(*oplst)->next = ptr->next;
-			(*oplst)->op = SS;
-			free(ptr);
-		}
-	}
-	optimize_swaps(&((*oplst)->next));
-	return (1);
-}
-
-int		optimize_oplist(t_oplst **oplst)
+int			optimize_oplist(t_oplst **oplst)
 {
 	optimize_rot(oplst);
 	optimize_rev_rot(oplst);
 	optimize_rot_a(oplst);
 	optimize_rot_b(oplst);
-	optimize_swaps(oplst);
 	optimize_push(oplst);
 	return (1);
 }

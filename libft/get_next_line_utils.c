@@ -6,14 +6,14 @@
 /*   By: omulder <omulder@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2019/12/06 18:28:06 by omulder        #+#    #+#                */
-/*   Updated: 2020/01/14 14:29:30 by omulder       ########   odam.nl         */
+/*   Updated: 2020/03/07 18:15:52 by omulder       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "get_next_line.h"
 #include <stdlib.h>
 
-int		ft_strfind_c(const char *s, int c)
+int			ft_strfind_c(const char *s, int c)
 {
 	int		i;
 
@@ -31,24 +31,24 @@ int		ft_strfind_c(const char *s, int c)
 	return (-1);
 }
 
-// void		*ft_memalloc(size_t size)
-// {
-// 	void	*new;
-// 	size_t	i;
+void		*ft_calloc(size_t size)
+{
+	void	*new;
+	size_t	i;
 
-// 	new = malloc(size);
-// 	if (new == NULL)
-// 		return (NULL);
-// 	i = 0;
-// 	while (i < size)
-// 	{
-// 		((char*)new)[i] = 0;
-// 		i++;
-// 	}
-// 	return (new);
-// }
+	new = malloc(size);
+	if (new == NULL)
+		return (NULL);
+	i = 0;
+	while (i < size)
+	{
+		((char*)new)[i] = 0;
+		i++;
+	}
+	return (new);
+}
 
-char	*ft_strjoinfree_s1(char *s1, char *s2)
+char		*ft_strjoinfree_s1(char *s1, char *s2)
 {
 	char	*join;
 	int		i;
@@ -56,7 +56,7 @@ char	*ft_strjoinfree_s1(char *s1, char *s2)
 
 	i = 0;
 	j = 0;
-	join = ft_memalloc(ft_strfind_c(s1, '\0') + ft_strfind_c(s2, '\0') + 1);
+	join = ft_calloc(ft_strfind_c(s1, '\0') + ft_strfind_c(s2, '\0') + 1);
 	if (join == NULL)
 		return (NULL);
 	while (s1 != NULL && s1[i] != '\0')

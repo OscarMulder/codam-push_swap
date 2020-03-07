@@ -6,7 +6,7 @@
 /*   By: omulder <omulder@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2019/12/06 18:25:22 by omulder        #+#    #+#                */
-/*   Updated: 2020/01/14 14:40:40 by omulder       ########   odam.nl         */
+/*   Updated: 2020/03/07 18:23:09 by omulder       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,10 +38,10 @@ typedef struct	s_fdlist
 	struct s_fdlist	*next;
 }				t_fdlist;
 
-int			ft_strfind_c(const char *s, int c);
-char		*ft_strjoinfree_s1(char *s1, char *s2);
-void		*ft_memalloc(size_t size);
-t_fdlist	*fdlist_find_create(t_fdlist **lst, int fd);
-int			free_buffer_item(t_fdlist **lst, t_fdlist *current);
+int				ft_strfind_c(const char *s, int c);
+char			*ft_strjoinfree_s1(char *s1, char *s2);
+void			*ft_memalloc(size_t size);
+t_fdlist		*fdlist_find_create(t_fdlist **lst, int fd);
+int				free_buffer_item(t_fdlist **lst, t_fdlist *current);
 
 #endif
