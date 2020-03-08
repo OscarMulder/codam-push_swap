@@ -6,7 +6,7 @@
 /*   By: omulder <omulder@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/01/19 15:22:41 by omulder        #+#    #+#                */
-/*   Updated: 2020/03/07 18:25:27 by omulder       ########   odam.nl         */
+/*   Updated: 2020/03/08 14:00:58 by omulder       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,12 +14,6 @@
 #include <libft.h>
 #include <stack.h>
 #include <stdlib.h>
-
-int			return_error(void)
-{
-	ft_printf("Error\n");
-	return (1);
-}
 
 static int	allocate_stacks(t_stacks *s, t_stacks **quick,
 	t_stacks **insert, t_stacks **small)
@@ -82,6 +76,17 @@ static void	sort_and_print(t_stacks *s)
 	delete_stacks(&insert);
 }
 
+static void	init_mirror(t_stacks *s)
+{
+	s->total = s->size_a;
+	s->amirror = ft_memalloc(sizeof(char) * s->total);
+	if (!s->amirror)
+	{
+		delete_stacks(&s);
+		exit(return_error());
+	}
+}
+
 int			main(int argc, char **argv)
 {
 	size_t		i;
@@ -96,14 +101,14 @@ int			main(int argc, char **argv)
 	while (i > 0)
 	{
 		if (!check_and_push(&(s->a), argv[i]))
+		{
+			delete_stacks(&s);
 			return (return_error());
+		}
 		i--;
 		s->size_a++;
 	}
-	s->total = s->size_a;
-	s->amirror = ft_memalloc(sizeof(char) * s->total);
-	if (!s->amirror)
-		exit(return_error());
+	init_mirror(s);
 	add_sorted_positions(s);
 	sort_and_print(s);
 	delete_stacks(&s);

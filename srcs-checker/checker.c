@@ -6,7 +6,7 @@
 /*   By: omulder <omulder@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/01/14 10:30:57 by omulder        #+#    #+#                */
-/*   Updated: 2020/03/06 15:16:41 by omulder       ########   odam.nl         */
+/*   Updated: 2020/03/08 14:11:32 by omulder       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,36 +63,57 @@ static int	read_and_do_opps(t_stack **a, t_stack **b, int *op_count)
 		if (ret > 0)
 		{
 			if (!do_opp(a, b, line))
+			{
+				ft_strdel(&line);
 				return (0);
+			}
 			(*op_count)++;
-			free(line);
+			ft_strdel(&line);
 		}
 	}
+	ft_strdel(&line);
 	return (1);
+}
+
+static int	parse_argv(t_stack **a, int argc, char **argv)
+{
+	size_t	i;
+
+	i = argc - 1;
+	while (i > 0)
+	{
+		if (!check_and_push(a, argv[i]))
+		{
+			delete_stack(a);
+			return (return_error());
+		}
+		i--;
+	}
+	return (0);
 }
 
 int			main(int argc, char **argv)
 {
-	size_t	i;
 	t_stack	*a;
 	t_stack *b;
 	int		count;
-	int		op_count;
 
 	if (argc < 2)
 		return (1);
-	i = argc - 1;
 	count = 0;
-	op_count = 0;
 	a = NULL;
 	b = NULL;
-	while (i > 0)
+	if (parse_argv(&a, argc, argv))
+		return (1);
+	if (!read_and_do_opps(&a, &b, &count))
 	{
-		if (!check_and_push(&a, argv[i]))
-			return (return_error());
-		i--;
-	}
-	if (!read_and_do_opps(&a, &b, &op_count))
+		delete_stack(&a);
+		delete_stack(&b);
 		return (return_error());
-	return (check_stack(a, &count, argc));
+	}
+	count = 0;
+	count = check_stack(a, &count, argc);
+	delete_stack(&a);
+	delete_stack(&b);
+	return (count);
 }
