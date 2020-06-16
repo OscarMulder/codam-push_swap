@@ -6,7 +6,7 @@
 /*   By: omulder <omulder@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2019/02/28 15:23:53 by omulder       #+#    #+#                 */
-/*   Updated: 2019/02/28 15:23:55 by omulder       ########   odam.nl         */
+/*   Updated: 2020/06/16 14:31:26 by omulder       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,14 +18,14 @@ t_fmt				prepare_fmt_num(t_fmt fmt, t_fmt copy, int neg)
 		fmt.width = (fmt.width - fmt.prec - 1);
 	fmt.prec = -1;
 	fmt.conv = 'D';
-	if (fmt.MIN)
+	if (fmt.opt[2])
 	{
-		fmt.MIN = 0;
+		fmt.opt[2] = 0;
 		fmt.width = 0;
 	}
 	if (fmt.width > 1)
 		fmt.width--;
 	if (neg)
-		fmt.PLUS = -1;
+		fmt.opt[4] = -1;
 	return (fmt);
 }

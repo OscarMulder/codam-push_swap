@@ -6,7 +6,7 @@
 /*   By: omulder <omulder@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2019/02/05 07:43:01 by omulder       #+#    #+#                 */
-/*   Updated: 2020/02/02 18:05:40 by omulder       ########   odam.nl         */
+/*   Updated: 2020/06/16 14:32:15 by omulder       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,13 +15,6 @@
 # include <stdarg.h>
 # include <unistd.h>
 # include <stdlib.h>
-
-# define HASH	opt[0]
-# define ZERO	opt[1]
-# define MIN	opt[2]
-# define SPACE	opt[3]
-# define PLUS	opt[4]
-# define APST	opt[5]
 
 typedef struct	s_fmt
 {

@@ -6,7 +6,7 @@
 /*   By: omulder <omulder@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2019/02/12 16:07:28 by omulder       #+#    #+#                 */
-/*   Updated: 2019/03/21 20:41:52 by omulder       ########   odam.nl         */
+/*   Updated: 2020/06/16 14:31:26 by omulder       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,16 +14,16 @@
 
 void		put_paddingandsign(t_fmt fmt, long long num, int ilen)
 {
-	if (!fmt.MIN && (!fmt.ZERO || fmt.prec != -1))
+	if (!fmt.opt[2] && (!fmt.opt[1] || fmt.prec != -1))
 		print_padding(fmt.fd, ' ', (fmt.width - ilen));
-	if (num >= 0 && fmt.SPACE && !fmt.PLUS)
+	if (num >= 0 && fmt.opt[3] && !fmt.opt[4])
 		pf_putchar(fmt.fd, ' ');
 	if (num == 0 && fmt.prec == 0 && fmt.width != -1)
 		pf_putchar(fmt.fd, ' ');
-	if (num >= 0 && fmt.PLUS == 1)
+	if (num >= 0 && fmt.opt[4] == 1)
 		pf_putchar(fmt.fd, '+');
-	if (num < 0 || fmt.PLUS == -1)
+	if (num < 0 || fmt.opt[4] == -1)
 		pf_putchar(fmt.fd, '-');
-	if (!fmt.MIN && fmt.ZERO && fmt.prec == -1)
+	if (!fmt.opt[2] && fmt.opt[1] && fmt.prec == -1)
 		print_padding(fmt.fd, '0', (fmt.width - ilen));
 }

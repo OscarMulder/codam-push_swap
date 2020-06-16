@@ -6,7 +6,7 @@
 /*   By: omulder <omulder@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2019/02/28 15:25:00 by omulder       #+#    #+#                 */
-/*   Updated: 2019/03/21 20:37:34 by omulder       ########   odam.nl         */
+/*   Updated: 2020/06/16 14:28:42 by omulder       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 int		print_dot(t_fmt copy)
 {
-	if (copy.prec != 0 || copy.HASH)
+	if (copy.prec != 0 || copy.opt[0])
 		return (pf_putchar(copy.fd, '.'));
 	return (0);
 }

@@ -6,7 +6,7 @@
 /*   By: omulder <omulder@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2019/02/28 15:52:49 by omulder       #+#    #+#                 */
-/*   Updated: 2019/02/28 15:52:59 by omulder       ########   odam.nl         */
+/*   Updated: 2020/06/16 14:30:51 by omulder       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,7 @@ int					print_ldouble(t_fmt fmt, long double num)
 	ret += print_dot(copy);
 	ex = round_expo(num, copy.prec);
 	fmt = prepare_fmt_exp(fmt, copy, ret);
-	if (fmt.prec != 0 || (fmt.MIN && fmt.width > 0))
+	if (fmt.prec != 0 || (fmt.opt[2] && fmt.width > 0))
 		ret += print_signed(fmt, ex);
 	return (ret);
 }

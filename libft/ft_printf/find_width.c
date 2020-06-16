@@ -6,7 +6,7 @@
 /*   By: omulder <omulder@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2019/02/07 12:04:30 by omulder       #+#    #+#                 */
-/*   Updated: 2019/03/13 16:20:04 by omulder       ########   odam.nl         */
+/*   Updated: 2020/06/16 14:30:46 by omulder       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ t_fmt	find_width(const char **format, t_fmt fmt, va_list ap)
 			fmt.width = va_arg(ap, int);
 			if (fmt.width < 0)
 			{
-				fmt.MIN = 1;
+				fmt.opt[2] = 1;
 				fmt.width = pf_abs(fmt.width);
 			}
 		}

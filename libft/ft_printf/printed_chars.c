@@ -6,7 +6,7 @@
 /*   By: omulder <omulder@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2019/02/12 15:58:28 by omulder       #+#    #+#                 */
-/*   Updated: 2019/03/13 16:20:45 by omulder       ########   odam.nl         */
+/*   Updated: 2020/06/16 14:31:26 by omulder       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ int		printed_chars(t_fmt fmt, long long num)
 			ilen = fmt.width;
 	}
 	if (fmt.width <= pf_longlen(num) &&
-	num >= 0 && (fmt.SPACE || fmt.PLUS))
+	num >= 0 && (fmt.opt[3] || fmt.opt[4]))
 		ilen++;
 	return (ilen);
 }

@@ -6,7 +6,7 @@
 /*   By: omulder <omulder@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2019/02/21 12:54:56 by omulder       #+#    #+#                 */
-/*   Updated: 2019/03/21 20:40:42 by omulder       ########   odam.nl         */
+/*   Updated: 2020/06/16 14:31:26 by omulder       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ int					print_signed(t_fmt fmt, long long num)
 	ilen = pf_longlen(num);
 	if (fmt.prec > ilen)
 		ilen = fmt.prec;
-	if (num < 0 || (num >= 0 && fmt.SPACE) || (num >= 0 && fmt.PLUS))
+	if (num < 0 || (num >= 0 && fmt.opt[3]) || (num >= 0 && fmt.opt[4]))
 		ilen++;
 	put_paddingandsign(fmt, num, ilen);
 	if (fmt.prec != -1)

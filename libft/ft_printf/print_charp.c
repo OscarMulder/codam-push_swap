@@ -6,7 +6,7 @@
 /*   By: omulder <omulder@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2019/02/08 16:14:44 by omulder       #+#    #+#                 */
-/*   Updated: 2019/03/21 20:40:26 by omulder       ########   odam.nl         */
+/*   Updated: 2020/06/16 14:30:50 by omulder       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,9 @@
 
 static void		put_padding(t_fmt fmt, int slen)
 {
-	if (!fmt.MIN && (!fmt.ZERO || !(fmt.prec == -1 || fmt.prec == 0)))
+	if (!fmt.opt[2] && (!fmt.opt[1] || !(fmt.prec == -1 || fmt.prec == 0)))
 		print_padding(fmt.fd, ' ', (fmt.width - slen));
-	if (!fmt.MIN && fmt.ZERO)
+	if (!fmt.opt[2] && fmt.opt[1])
 		print_padding(fmt.fd, '0', (fmt.width - slen));
 }
 
@@ -35,7 +35,7 @@ int				print_charp(t_fmt fmt, char *str)
 		pf_putstr(fmt.fd, str);
 	else
 		pf_putnstr(fmt.fd, str, fmt.prec);
-	if (fmt.MIN)
+	if (fmt.opt[2])
 		print_padding(fmt.fd, ' ', (fmt.width - slen));
 	if (fmt.width > slen)
 		slen = fmt.width;

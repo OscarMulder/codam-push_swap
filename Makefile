@@ -5,8 +5,8 @@
 #                                                      +:+                     #
 #    By: omulder <omulder@student.codam.nl>           +#+                      #
 #                                                    +#+                       #
-#    Created: 2020/01/14 12:14:20 by omulder        #+#    #+#                 #
-#    Updated: 2020/03/08 14:00:39 by omulder       ########   odam.nl          #
+#    Created: 2020/01/14 12:14:20 by omulder       #+#    #+#                  #
+#    Updated: 2020/06/16 14:27:53 by omulder       ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,8 +14,8 @@ NAME = push_swap
 CHECKER = checker
 LIBFT= ./libft/libft.a
 CC = gcc
+DEBUGFLAGS = -fsanitize=address -g
 FLAGS = -Wall -Werror -Wextra
-DEBUGFLAGS = -fsanitize=address -fno-omit-frame-pointer -g
 INCLUDES = -I./ -I./libft/ -I./inc -I../libft
 LINK = -L./libft -lft
 VPATH = ./srcs-checker ./srcs-push_swap ./srcs-stack

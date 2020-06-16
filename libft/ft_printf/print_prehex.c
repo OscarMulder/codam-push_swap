@@ -6,7 +6,7 @@
 /*   By: omulder <omulder@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2019/02/11 12:41:39 by omulder       #+#    #+#                 */
-/*   Updated: 2019/03/21 20:38:57 by omulder       ########   odam.nl         */
+/*   Updated: 2020/06/16 14:33:42 by omulder       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ int		print_prehex(t_fmt fmt)
 	int		hash;
 	char	c;
 
-	hash = fmt.HASH;
+	hash = fmt.opt[0];
 	c = fmt.conv;
 	if (hash)
 	{

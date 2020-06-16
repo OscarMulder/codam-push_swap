@@ -6,7 +6,7 @@
 /*   By: omulder <omulder@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2019/02/12 16:00:06 by omulder       #+#    #+#                 */
-/*   Updated: 2019/03/13 16:25:03 by omulder       ########   odam.nl         */
+/*   Updated: 2020/06/16 14:28:42 by omulder       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ int		printed_uchars(t_fmt fmt, unsigned long long num)
 
 	ilen = pf_ulonglen(num, find_base(fmt));
 	rilen = ilen;
-	if ((fmt.HASH && is_hex(fmt) &&
+	if ((fmt.opt[0] && is_hex(fmt) &&
 	num != 0) || fmt.conv == 'p')
 		rilen += 2;
 	if (fmt.prec == 0 && num == 0 && fmt.conv != 'p')
@@ -31,7 +31,7 @@ int		printed_uchars(t_fmt fmt, unsigned long long num)
 		if (fmt.prec > fmt.width)
 		{
 			rilen = fmt.prec;
-			if (fmt.HASH && is_hex(fmt) && (num != 0 || fmt.conv == 'p'))
+			if (fmt.opt[0] && is_hex(fmt) && (num != 0 || fmt.conv == 'p'))
 				rilen += 2;
 		}
 		else
