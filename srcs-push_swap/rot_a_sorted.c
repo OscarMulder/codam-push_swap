@@ -6,11 +6,12 @@
 /*   By: omulder <omulder@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/03/06 15:25:21 by omulder       #+#    #+#                 */
-/*   Updated: 2020/03/06 15:25:33 by omulder       ########   odam.nl         */
+/*   Updated: 2020/06/25 15:02:48 by omulder       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <push_swap.h>
+#include <libft.h>
 
 void	rot_a_sorted(t_stacks *s)
 {
@@ -24,7 +25,7 @@ void	rot_a_sorted(t_stacks *s)
 		i++;
 		ptr = ptr->next;
 	}
-	if (i <= s->size_a / 2)
+	if (i <= (s->size_a / 2))
 	{
 		while (s->a->pos != 1)
 			opp_do(s, RA);
