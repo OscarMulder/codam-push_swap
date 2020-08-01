@@ -6,7 +6,7 @@
 /*   By: omulder <omulder@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2019/01/09 11:10:09 by omulder       #+#    #+#                 */
-/*   Updated: 2020/03/07 16:49:16 by omulder       ########   odam.nl         */
+/*   Updated: 2020/08/01 16:36:20 by omulder       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -106,7 +106,26 @@ void			ft_strclr(char *s);
 void			ft_strdel(char **as);
 void			ft_striter(char *s, void (*f)(char *));
 void			ft_striteri(char *s, void (*f)(unsigned int, char *));
-int				ft_aisint(char *n);
+int				ft_aisint32(char *n);
 int				ft_abs(int num);
+
+/*
+** ft_isnumeric(char *str)
+**
+** Checks if 'str' is a number in valid integer format that can be converted
+** by an atoi() like function.
+** Doesn't handle floating point numbers, doesn't check if the number fits in
+** an int.
+*/
+int				ft_isnumeric(char *str);
+
+/*
+** char		*ft_trim_num(char *str)
+**
+** Trims spaces and leading zeros from a valid (checked by ft_isnumeric)
+** number string.
+** Returns a newly allocated string.
+*/
+char			*ft_trim_num(char *str);
 
 #endif

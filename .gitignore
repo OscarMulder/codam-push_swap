@@ -3,3 +3,4 @@ checker
 libft/libft.a
 push_swap
 .vscode/settings.json
+info.plist

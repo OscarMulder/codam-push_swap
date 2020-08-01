@@ -6,13 +6,13 @@
 /*   By: omulder <omulder@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/01/14 12:31:29 by omulder       #+#    #+#                 */
-/*   Updated: 2020/01/19 15:48:29 by omulder       ########   odam.nl         */
+/*   Updated: 2020/08/01 16:10:20 by omulder       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int		ft_aisint(char *n)
+int		ft_aisint32(char *n)
 {
 	size_t	i;
 	size_t	len;

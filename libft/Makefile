@@ -5,15 +5,15 @@
 #                                                      +:+                     #
 #    By: omulder <omulder@student.codam.nl>           +#+                      #
 #                                                    +#+                       #
-#    Created: 2019/01/09 11:10:43 by omulder        #+#    #+#                 #
-#    Updated: 2020/03/07 16:49:21 by omulder       ########   odam.nl          #
+#    Created: 2019/01/09 11:10:43 by omulder       #+#    #+#                  #
+#    Updated: 2020/08/01 16:46:26 by omulder       ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = libft.a
 CC = gcc
 FLAGS = -Wall -Werror -Wextra
-INCLUDES = -I./includes
+INCLUDES = -I./includes -I./
 FILES = ft_atoi.c ft_bzero.c ft_isalnum.c ft_isalpha.c ft_isascii.c  \
 	ft_isdigit.c ft_isprint.c ft_isspace.c ft_itoa.c ft_lstadd.c ft_lstdel.c \
 	ft_lstdelone.c ft_lstiter.c ft_lstmap.c ft_lstnew.c ft_memalloc.c \
@@ -29,8 +29,9 @@ FILES = ft_atoi.c ft_bzero.c ft_isalnum.c ft_isalpha.c ft_isascii.c  \
 	ft_putnstr.c ft_memchr.c ft_intlen.c ft_lstcount.c ft_lstaddback.c \
 	ft_strarrsort.c ft_strarrsort_r.c ft_strarrdel.c ft_getline_fd.c \
 	ft_find_env.c ft_strdcountq.c ft_strreplace.c ft_strarrdup.c \
-	ft_find_envi.c ft_strarradd.c ft_strarrdelone.c ft_aisint.c \
-	get_next_line.c get_next_line_utils.c ft_abs.c
+	ft_find_envi.c ft_strarradd.c ft_strarrdelone.c ft_aisint32.c \
+	get_next_line.c get_next_line_utils.c ft_abs.c ft_isnumeric.c \
+	ft_trim_num.c
 OBJECTS = $(FILES:.c=.o)
 
 all: $(OBJECTS) $(NAME)

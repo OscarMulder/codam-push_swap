@@ -6,7 +6,7 @@
 /*   By: omulder <omulder@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/01/14 12:35:38 by omulder       #+#    #+#                 */
-/*   Updated: 2020/03/07 18:24:38 by omulder       ########   odam.nl         */
+/*   Updated: 2020/08/01 17:06:03 by omulder       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,8 +15,23 @@
 
 int		check_and_push(t_stack **stack, char *value)
 {
-	if (ft_aisint(value) && !value_exists(*stack, ft_atoi(value)))
-		return (push_stack(stack, ft_atoi(value)));
+	char	*tvalue;
+	int		num;
+
+	if (!ft_isnumeric(value))
+		return (0);
+	tvalue = ft_trim_num(value);
+	if (tvalue == NULL)
+		return (-1);
+	if (!ft_aisint32(tvalue))
+	{
+		free(tvalue);
+		return (0);
+	}
+	num = ft_atoi(tvalue);
+	free(tvalue);
+	if (!value_exists(*stack, num))
+		return (push_stack(stack, num));
 	return (0);
 }
 

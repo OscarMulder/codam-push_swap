@@ -6,16 +6,12 @@
 /*   By: omulder <omulder@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2019/01/13 13:39:22 by omulder       #+#    #+#                 */
-/*   Updated: 2019/01/13 21:51:55 by omulder       ########   odam.nl         */
+/*   Updated: 2020/08/01 16:06:09 by omulder       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 int		ft_isspace(int c)
 {
-	if (c == '\t' || c == '\n' || c == '\v' || c == '\f' || c == '\r'
-		|| c == ' ')
-	{
-		return (1);
-	}
-	return (0);
+	return (c == '\t' || c == '\n' || c == '\v' || c == '\f' || c == '\r'
+		|| c == ' ');
 }
