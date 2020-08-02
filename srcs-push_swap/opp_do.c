@@ -6,13 +6,11 @@
 /*   By: omulder <omulder@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/01/25 16:16:04 by omulder       #+#    #+#                 */
-/*   Updated: 2020/03/06 16:08:58 by omulder       ########   odam.nl         */
+/*   Updated: 2020/08/02 13:37:50 by omulder       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <push_swap.h>
-#include <stack.h>
-#include <stdlib.h>
 
 int		opp_do(t_stacks *s, t_opp op)
 {

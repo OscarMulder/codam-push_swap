@@ -6,12 +6,11 @@
 /*   By: omulder <omulder@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/02/23 19:17:08 by omulder       #+#    #+#                 */
-/*   Updated: 2020/03/03 14:59:04 by omulder       ########   odam.nl         */
+/*   Updated: 2020/08/02 14:30:45 by omulder       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <push_swap.h>
-#include <libft.h>
 #include <stdlib.h>
 
 void	set_push_ops(t_oplst **ptr, int pusha, int pushb)

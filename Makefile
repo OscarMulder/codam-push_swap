@@ -6,7 +6,7 @@
 #    By: omulder <omulder@student.codam.nl>           +#+                      #
 #                                                    +#+                       #
 #    Created: 2020/01/14 12:14:20 by omulder       #+#    #+#                  #
-#    Updated: 2020/06/16 14:52:59 by omulder       ########   odam.nl          #
+#    Updated: 2020/08/02 12:47:15 by omulder       ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
@@ -56,7 +56,7 @@ $(OBJSTACK): $(SRCSSTACK)
 clean:
 	rm -f $(OBJPUSH) $(OBJCHECK) $(OBJSTACK)
 	$(MAKE) -C libft clean
-	
+
 fclean: clean
 	rm -f $(NAME) $(CHECKER)
 	$(MAKE) -C libft fclean

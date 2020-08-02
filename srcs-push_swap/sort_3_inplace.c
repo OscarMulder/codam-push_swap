@@ -6,14 +6,11 @@
 /*   By: omulder <omulder@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/01/27 16:19:08 by omulder       #+#    #+#                 */
-/*   Updated: 2020/03/07 18:12:22 by omulder       ########   odam.nl         */
+/*   Updated: 2020/08/02 14:28:51 by omulder       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <push_swap.h>
-#include <libft.h>
-#include <stack.h>
-#include <stdlib.h>
 
 static void	sort_3_a_last(t_stacks *s)
 {

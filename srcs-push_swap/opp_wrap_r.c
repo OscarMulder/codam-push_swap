@@ -6,13 +6,11 @@
 /*   By: omulder <omulder@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/01/25 16:09:15 by omulder       #+#    #+#                 */
-/*   Updated: 2020/02/25 10:21:41 by omulder       ########   odam.nl         */
+/*   Updated: 2020/08/02 14:29:44 by omulder       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <push_swap.h>
-#include <stack.h>
-#include <stdlib.h>
 
 void	opp_wrap_ra(t_stacks *s)
 {

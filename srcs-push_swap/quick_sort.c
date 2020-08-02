@@ -6,14 +6,11 @@
 /*   By: omulder <omulder@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/01/26 19:33:05 by omulder       #+#    #+#                 */
-/*   Updated: 2020/03/07 18:01:33 by omulder       ########   odam.nl         */
+/*   Updated: 2020/08/02 14:29:11 by omulder       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <push_swap.h>
-#include <libft.h>
-#include <stack.h>
-#include <stdlib.h>
 
 void	split_a(t_stacks *s, int min, int max, int pivot)
 {

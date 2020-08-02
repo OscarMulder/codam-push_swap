@@ -6,13 +6,13 @@
 /*   By: omulder <omulder@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/02/24 14:00:51 by omulder       #+#    #+#                 */
-/*   Updated: 2020/03/07 18:02:03 by omulder       ########   odam.nl         */
+/*   Updated: 2020/08/02 14:31:21 by omulder       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <push_swap.h>
 #include <libft.h>
-#include <stddef.h>
+#include <stdlib.h>
 
 static void	calc_move(t_stacks *s, t_stack *bptr, t_moves *moves, int i)
 {

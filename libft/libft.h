@@ -6,7 +6,7 @@
 /*   By: omulder <omulder@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2019/01/09 11:10:09 by omulder       #+#    #+#                 */
-/*   Updated: 2020/08/01 16:36:20 by omulder       ########   odam.nl         */
+/*   Updated: 2020/08/02 13:24:27 by omulder       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -123,7 +123,7 @@ int				ft_isnumeric(char *str);
 ** char		*ft_trim_num(char *str)
 **
 ** Trims spaces and leading zeros from a valid (checked by ft_isnumeric)
-** number string.
+** number string. Also trims away the not so usefull '+' char.
 ** Returns a newly allocated string.
 */
 char			*ft_trim_num(char *str);

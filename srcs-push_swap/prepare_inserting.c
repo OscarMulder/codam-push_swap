@@ -6,13 +6,11 @@
 /*   By: omulder <omulder@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/03/06 15:37:35 by omulder       #+#    #+#                 */
-/*   Updated: 2020/06/25 15:02:09 by omulder       ########   odam.nl         */
+/*   Updated: 2020/08/02 14:26:42 by omulder       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <push_swap.h>
-#include <libft.h>
-#include <stddef.h>
 
 static int	get_dividor(t_stacks *s)
 {

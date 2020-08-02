@@ -6,14 +6,12 @@
 /*   By: omulder <omulder@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/01/25 16:27:16 by omulder       #+#    #+#                 */
-/*   Updated: 2020/03/08 13:57:43 by omulder       ########   odam.nl         */
+/*   Updated: 2020/08/02 14:28:59 by omulder       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <push_swap.h>
-#include <stack.h>
 #include <libft.h>
-#include <stdlib.h>
 
 t_stacks	*new_stacks(void)
 {

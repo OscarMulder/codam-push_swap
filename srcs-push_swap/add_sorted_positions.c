@@ -6,14 +6,12 @@
 /*   By: omulder <omulder@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/03/06 15:19:26 by omulder       #+#    #+#                 */
-/*   Updated: 2020/03/06 16:04:34 by omulder       ########   odam.nl         */
+/*   Updated: 2020/08/02 13:37:04 by omulder       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <push_swap.h>
-#include <libft.h>
 #include <stack.h>
-#include <stdlib.h>
 
 static void	find_next_smal(t_stack **smal, t_stack **prev_smal)
 {

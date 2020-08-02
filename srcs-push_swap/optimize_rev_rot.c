@@ -6,13 +6,11 @@
 /*   By: omulder <omulder@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/02/23 18:04:00 by omulder       #+#    #+#                 */
-/*   Updated: 2020/03/06 14:45:20 by omulder       ########   odam.nl         */
+/*   Updated: 2020/08/02 14:26:02 by omulder       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <push_swap.h>
-#include <stddef.h>
-#include <stdlib.h>
 
 static void	set_rot_ops(t_oplst **ptr, int rota, int rotb)
 {

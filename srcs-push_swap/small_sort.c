@@ -6,14 +6,11 @@
 /*   By: omulder <omulder@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/03/03 12:51:11 by omulder       #+#    #+#                 */
-/*   Updated: 2020/03/07 18:05:22 by omulder       ########   odam.nl         */
+/*   Updated: 2020/08/02 14:29:04 by omulder       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <push_swap.h>
-#include <libft.h>
-#include <stack.h>
-#include <stdlib.h>
 
 static void	sort_2(t_stacks *s)
 {

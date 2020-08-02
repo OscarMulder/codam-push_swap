@@ -5,8 +5,8 @@
 #                                                      +:+                     #
 #    By: omulder <omulder@student.codam.nl>           +#+                      #
 #                                                    +#+                       #
-#    Created: 2019/02/05 07:59:03 by omulder        #+#    #+#                 #
-#    Updated: 2019/03/24 12:22:06 by omulder       ########   odam.nl          #
+#    Created: 2019/02/05 07:59:03 by omulder       #+#    #+#                  #
+#    Updated: 2020/08/02 14:33:11 by omulder       ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
@@ -48,7 +48,7 @@ $(OBJECTS): $(SRCS) $(LIBFT)
 
 clean:
 	rm -f $(OBJECTS)
-	
+
 fclean: clean
 	rm -f $(NAME)
 	rm -f $(TEST)
@@ -56,5 +56,5 @@ fclean: clean
 re: fclean all
 
 reprintf: fclean
-	rm -f $(printf) 
+	rm -f $(printf)
 	make $(TEST)

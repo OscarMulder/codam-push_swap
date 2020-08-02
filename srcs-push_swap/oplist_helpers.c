@@ -6,14 +6,12 @@
 /*   By: omulder <omulder@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/01/25 17:06:57 by omulder       #+#    #+#                 */
-/*   Updated: 2020/02/23 17:54:53 by omulder       ########   odam.nl         */
+/*   Updated: 2020/08/02 13:37:31 by omulder       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <push_swap.h>
-#include <stack.h>
 #include <libft.h>
-#include <stdlib.h>
 
 int			add_oplst_item(t_oplst **oplst, t_opp op)
 {

@@ -6,14 +6,12 @@
 /*   By: omulder <omulder@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/01/19 15:22:41 by omulder       #+#    #+#                 */
-/*   Updated: 2020/03/08 14:00:58 by omulder       ########   odam.nl         */
+/*   Updated: 2020/08/02 14:27:14 by omulder       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <push_swap.h>
 #include <libft.h>
-#include <stack.h>
-#include <stdlib.h>
 
 static int	allocate_stacks(t_stacks *s, t_stacks **quick,
 	t_stacks **insert, t_stacks **small)

@@ -6,12 +6,11 @@
 /*   By: omulder <omulder@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/03/06 15:25:21 by omulder       #+#    #+#                 */
-/*   Updated: 2020/06/25 15:02:48 by omulder       ########   odam.nl         */
+/*   Updated: 2020/08/02 14:35:21 by omulder       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <push_swap.h>
-#include <libft.h>
 
 void	rot_a_sorted(t_stacks *s)
 {
