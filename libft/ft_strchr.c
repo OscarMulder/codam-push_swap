@@ -6,7 +6,7 @@
 /*   By: omulder <omulder@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2019/01/09 18:14:57 by omulder       #+#    #+#                 */
-/*   Updated: 2019/02/01 11:56:09 by omulder       ########   odam.nl         */
+/*   Updated: 2022/02/08 17:11:28 by omulder       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,9 @@
 
 char	*ft_strchr(const char *s, int c)
 {
-	char *ptr;
+	char	*ptr;
 
-	ptr = (char*)s;
+	ptr = (char *)s;
 	while (*ptr != '\0')
 	{
 		if (*ptr == (char)c)

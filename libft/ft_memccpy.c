@@ -6,7 +6,7 @@
 /*   By: omulder <omulder@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2019/01/10 15:17:23 by omulder       #+#    #+#                 */
-/*   Updated: 2019/02/02 12:17:53 by omulder       ########   odam.nl         */
+/*   Updated: 2022/02/08 17:08:47 by omulder       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,8 +18,8 @@ void	*ft_memccpy(void *dst, void *src, int c, size_t n)
 	unsigned char	*ptrsrc;
 	size_t			i;
 
-	ptrdst = (unsigned char*)dst;
-	ptrsrc = (unsigned char*)src;
+	ptrdst = (unsigned char *)dst;
+	ptrsrc = (unsigned char *)src;
 	i = 0;
 	while (i < n)
 	{

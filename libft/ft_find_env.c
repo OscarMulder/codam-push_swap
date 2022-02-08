@@ -6,7 +6,7 @@
 /*   By: omulder <omulder@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2019/03/28 12:35:29 by omulder       #+#    #+#                 */
-/*   Updated: 2019/03/28 12:45:27 by omulder       ########   odam.nl         */
+/*   Updated: 2022/02/08 17:07:09 by omulder       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,8 +21,8 @@ char	*ft_find_env(char **env, char *var)
 	{
 		if (ft_strstr(env[i], var) == env[i])
 		{
-			return (ft_strsub(env[i], ft_strlen(var) + 1, (ft_strlen(env[i]) -
-			ft_strlen(var))));
+			return (ft_strsub(env[i], ft_strlen(var) + 1, (ft_strlen(env[i]) \
+			- ft_strlen(var))));
 		}
 		i++;
 	}

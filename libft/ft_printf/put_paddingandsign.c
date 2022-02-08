@@ -6,13 +6,13 @@
 /*   By: omulder <omulder@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2019/02/12 16:07:28 by omulder       #+#    #+#                 */
-/*   Updated: 2020/06/16 14:31:26 by omulder       ########   odam.nl         */
+/*   Updated: 2022/02/08 17:03:03 by omulder       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-void		put_paddingandsign(t_fmt fmt, long long num, int ilen)
+void	put_paddingandsign(t_fmt fmt, long long num, int ilen)
 {
 	if (!fmt.opt[2] && (!fmt.opt[1] || fmt.prec != -1))
 		print_padding(fmt.fd, ' ', (fmt.width - ilen));

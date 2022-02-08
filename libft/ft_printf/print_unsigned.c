@@ -6,7 +6,7 @@
 /*   By: omulder <omulder@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2019/02/21 11:17:53 by omulder       #+#    #+#                 */
-/*   Updated: 2020/06/16 14:30:52 by omulder       ########   odam.nl         */
+/*   Updated: 2022/02/08 17:01:35 by omulder       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ static unsigned long long	typecast(t_fmt fmt, unsigned long long n)
 	return ((unsigned long long)n);
 }
 
-static t_fmt				set_prec(t_fmt fmt, unsigned long long n, int ilen)
+static t_fmt	set_prec(t_fmt fmt, unsigned long long n, int ilen)
 {
 	if (is_voidp(fmt))
 		fmt.opt[0] = 1;
@@ -40,10 +40,10 @@ static t_fmt				set_prec(t_fmt fmt, unsigned long long n, int ilen)
 	return (fmt);
 }
 
-int							print_unsigned(t_fmt fmt, unsigned long long n)
+int	print_unsigned(t_fmt fmt, unsigned long long n)
 {
-	int ilen;
-	int oldprec;
+	int	ilen;
+	int	oldprec;
 
 	n = (typecast(fmt, n));
 	ilen = pf_ulonglen(n, find_base(fmt));

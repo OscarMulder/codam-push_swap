@@ -6,11 +6,11 @@
 /*   By: omulder <omulder@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2019/01/10 13:36:45 by omulder       #+#    #+#                 */
-/*   Updated: 2019/01/10 13:36:47 by omulder       ########   odam.nl         */
+/*   Updated: 2022/02/08 17:07:49 by omulder       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-int		ft_isascii(int c)
+int	ft_isascii(int c)
 {
 	if (c >= 0 && c <= 0177)
 		return (1);

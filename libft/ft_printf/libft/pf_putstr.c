@@ -6,7 +6,7 @@
 /*   By: omulder <omulder@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2019/01/09 12:05:27 by omulder       #+#    #+#                 */
-/*   Updated: 2019/03/21 20:32:01 by omulder       ########   odam.nl         */
+/*   Updated: 2022/02/08 16:55:50 by omulder       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void	pf_putstr(int fd, char const *s)
 {
-	int i;
+	int	i;
 
 	i = 0;
 	if (s == NULL)

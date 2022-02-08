@@ -6,7 +6,7 @@
 /*   By: omulder <omulder@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2019/04/03 19:41:15 by omulder       #+#    #+#                 */
-/*   Updated: 2019/04/04 14:42:57 by omulder       ########   odam.nl         */
+/*   Updated: 2022/02/08 17:11:11 by omulder       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ char	**ft_strarrdelone(char **arr, int index)
 	if (index >= count)
 		return (NULL);
 	i = 0;
-	new = (char**)ft_memalloc(sizeof(char*) * (count + 1));
+	new = (char **)ft_memalloc(sizeof(char *) * (count + 1));
 	count = 0;
 	while (arr[i] != 0)
 	{

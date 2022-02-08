@@ -6,13 +6,13 @@
 /*   By: omulder <omulder@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/01/25 16:16:04 by omulder       #+#    #+#                 */
-/*   Updated: 2020/08/02 13:37:50 by omulder       ########   odam.nl         */
+/*   Updated: 2022/02/08 16:48:10 by omulder       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <push_swap.h>
 
-int		opp_do(t_stacks *s, t_opp op)
+int	opp_do(t_stacks *s, t_opp op)
 {
 	if (op == SA)
 		opp_wrap_sa(s);

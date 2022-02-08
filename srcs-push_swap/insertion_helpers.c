@@ -6,7 +6,7 @@
 /*   By: omulder <omulder@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/03/06 15:21:18 by omulder       #+#    #+#                 */
-/*   Updated: 2020/08/02 14:25:27 by omulder       ########   odam.nl         */
+/*   Updated: 2022/02/08 16:45:33 by omulder       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void	set_sorted(t_stacks *s)
 {
-	t_stack *ptr;
+	t_stack	*ptr;
 
 	ptr = s->a;
 	if (ptr == NULL)
@@ -27,9 +27,9 @@ void	set_sorted(t_stacks *s)
 	}
 }
 
-int		calc_a_rot_count(t_stacks *s, int bpos)
+int	calc_a_rot_count(t_stacks *s, int bpos)
 {
-	int count;
+	int	count;
 	int	i;
 
 	count = 0;
@@ -52,7 +52,7 @@ int		calc_a_rot_count(t_stacks *s, int bpos)
 	return (count);
 }
 
-int		get_a_rot_count(t_stacks *s, int bpos)
+int	get_a_rot_count(t_stacks *s, int bpos)
 {
 	int		count;
 
@@ -87,7 +87,7 @@ void	do_best_move(t_stacks *s, int a, int b)
 	opp_do(s, PA);
 }
 
-int		find_best(t_stacks *s, t_moves *moves)
+int	find_best(t_stacks *s, t_moves *moves)
 {
 	int		i;
 	int		best;

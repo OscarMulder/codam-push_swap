@@ -6,7 +6,7 @@
 /*   By: omulder <omulder@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2019/12/06 18:25:22 by omulder       #+#    #+#                 */
-/*   Updated: 2020/03/07 18:23:09 by omulder       ########   odam.nl         */
+/*   Updated: 2022/02/08 17:13:48 by omulder       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ int				get_next_line(int fd, char **line);
 **	Utils
 */
 
-typedef struct	s_fdlist
+typedef struct s_fdlist
 {
 	int				fd;
 	char			*buf;

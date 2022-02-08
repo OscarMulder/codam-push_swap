@@ -6,13 +6,13 @@
 /*   By: omulder <omulder@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2019/02/28 15:13:56 by omulder       #+#    #+#                 */
-/*   Updated: 2019/03/13 16:20:34 by omulder       ########   odam.nl         */
+/*   Updated: 2022/02/08 16:54:11 by omulder       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int		pf_isupper(char c)
+int	pf_isupper(char c)
 {
 	if (c >= 'A' && c <= 'Z')
 		return (1);

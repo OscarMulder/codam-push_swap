@@ -6,14 +6,14 @@
 /*   By: omulder <omulder@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/01/19 15:18:05 by omulder       #+#    #+#                 */
-/*   Updated: 2020/02/02 11:32:09 by omulder       ########   odam.nl         */
+/*   Updated: 2022/02/08 16:53:01 by omulder       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef STACK_H
 # define STACK_H
 
-typedef struct	s_stack {
+typedef struct s_stack {
 	int				value;
 	int				pos;
 	struct s_stack	*next;

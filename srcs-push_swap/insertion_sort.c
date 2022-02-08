@@ -6,7 +6,7 @@
 /*   By: omulder <omulder@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/02/24 14:00:51 by omulder       #+#    #+#                 */
-/*   Updated: 2020/08/02 14:31:21 by omulder       ########   odam.nl         */
+/*   Updated: 2022/02/08 16:45:42 by omulder       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,7 +47,7 @@ static void	calc_moves(t_stacks *s, t_moves **moves)
 	}
 }
 
-void		find_and_do_best_move(t_stacks *s)
+void	find_and_do_best_move(t_stacks *s)
 {
 	t_moves		*moves;
 	int			best;
@@ -58,7 +58,7 @@ void		find_and_do_best_move(t_stacks *s)
 	free(moves);
 }
 
-void		insertion_sort(t_stacks *s)
+void	insertion_sort(t_stacks *s)
 {
 	int		first_away;
 

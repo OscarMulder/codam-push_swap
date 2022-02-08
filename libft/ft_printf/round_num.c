@@ -6,7 +6,7 @@
 /*   By: omulder <omulder@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2019/02/28 15:21:59 by omulder       #+#    #+#                 */
-/*   Updated: 2019/03/13 16:20:53 by omulder       ########   odam.nl         */
+/*   Updated: 2022/02/08 17:03:19 by omulder       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 long long	round_num(long long num, double expo)
 {
-	long long cpy;
+	long long	cpy;
 
 	cpy = expo * pf_powl(10, 2);
 	if (cpy < 0)

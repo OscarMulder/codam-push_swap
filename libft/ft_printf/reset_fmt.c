@@ -6,7 +6,7 @@
 /*   By: omulder <omulder@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2019/02/18 12:54:38 by omulder       #+#    #+#                 */
-/*   Updated: 2019/02/28 15:00:53 by omulder       ########   odam.nl         */
+/*   Updated: 2022/02/08 17:03:09 by omulder       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 t_fmt	reset_fmt(t_fmt fmt)
 {
-	int i;
+	int	i;
 
 	i = 0;
 	while (i < 6)

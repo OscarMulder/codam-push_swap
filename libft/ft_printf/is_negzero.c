@@ -6,13 +6,13 @@
 /*   By: omulder <omulder@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2019/02/28 15:23:17 by omulder       #+#    #+#                 */
-/*   Updated: 2019/02/28 15:23:18 by omulder       ########   odam.nl         */
+/*   Updated: 2022/02/08 16:59:20 by omulder       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int			is_negzero(double num)
+int	is_negzero(double num)
 {
 	if (num == 0 && 1 / num == (-1.0 / 0.0))
 		return (1);

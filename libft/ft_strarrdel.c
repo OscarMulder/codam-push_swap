@@ -6,7 +6,7 @@
 /*   By: omulder <omulder@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2019/03/24 13:17:15 by omulder       #+#    #+#                 */
-/*   Updated: 2019/04/12 10:14:19 by omulder       ########   odam.nl         */
+/*   Updated: 2022/02/08 17:10:56 by omulder       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void	ft_strarrdel(char ***arr)
 {
-	int i;
+	int	i;
 
 	i = 0;
 	if (arr == NULL || *arr == NULL)

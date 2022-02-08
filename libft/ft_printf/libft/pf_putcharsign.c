@@ -6,7 +6,7 @@
 /*   By: omulder <omulder@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2019/02/12 15:07:22 by omulder       #+#    #+#                 */
-/*   Updated: 2019/03/21 20:44:58 by omulder       ########   odam.nl         */
+/*   Updated: 2022/02/08 16:55:33 by omulder       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void	pf_putcharsign(int fd, long long c)
 {
-	char cs;
+	char	cs;
 
 	cs = (char)c;
 	if (cs < 0)

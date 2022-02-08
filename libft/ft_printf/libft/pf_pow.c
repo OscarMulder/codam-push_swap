@@ -6,7 +6,7 @@
 /*   By: omulder <omulder@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2019/02/14 15:29:06 by omulder       #+#    #+#                 */
-/*   Updated: 2019/03/13 16:20:53 by omulder       ########   odam.nl         */
+/*   Updated: 2022/02/08 16:54:36 by omulder       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 
 long double	pf_powl(long double x, long double y)
 {
-	int i;
-	int f;
+	int	i;
+	int	f;
 
 	i = 1;
 	f = x;

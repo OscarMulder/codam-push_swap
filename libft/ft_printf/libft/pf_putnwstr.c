@@ -6,7 +6,7 @@
 /*   By: omulder <omulder@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2019/02/20 11:40:46 by omulder       #+#    #+#                 */
-/*   Updated: 2019/03/21 20:32:02 by omulder       ########   odam.nl         */
+/*   Updated: 2022/02/08 16:55:44 by omulder       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 
 void	pf_putnwstr(int fd, wchar_t const *s, size_t len)
 {
-	size_t i;
-	size_t c;
+	size_t	i;
+	size_t	c;
 
 	i = 0;
 	c = 0;

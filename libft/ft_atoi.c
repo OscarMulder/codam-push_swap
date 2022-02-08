@@ -6,7 +6,7 @@
 /*   By: omulder <omulder@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2019/01/11 21:44:34 by omulder       #+#    #+#                 */
-/*   Updated: 2019/02/02 14:00:47 by omulder       ########   odam.nl         */
+/*   Updated: 2022/02/08 17:06:39 by omulder       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 static int	check_bounds(const char *str, int start, int neg, unsigned long num)
 {
-	size_t length;
+	size_t	length;
 
 	length = 0;
 	while (str[start + length] != '\0' && ft_isdigit(str[start + length]))
@@ -26,7 +26,7 @@ static int	check_bounds(const char *str, int start, int neg, unsigned long num)
 	return ((int)num * neg);
 }
 
-int			ft_atoi(const char *str)
+int	ft_atoi(const char *str)
 {
 	unsigned long	num;
 	int				neg;

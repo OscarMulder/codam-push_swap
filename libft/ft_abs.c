@@ -6,11 +6,11 @@
 /*   By: omulder <omulder@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/03/07 16:48:05 by omulder       #+#    #+#                 */
-/*   Updated: 2020/03/07 16:48:59 by omulder       ########   odam.nl         */
+/*   Updated: 2022/02/08 17:03:24 by omulder       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-int		ft_abs(int num)
+int	ft_abs(int num)
 {
 	if (num < 0)
 		return (-num);

@@ -6,11 +6,11 @@
 /*   By: omulder <omulder@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2019/01/13 13:39:22 by omulder       #+#    #+#                 */
-/*   Updated: 2019/03/13 16:20:14 by omulder       ########   odam.nl         */
+/*   Updated: 2022/02/08 16:54:05 by omulder       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-int		pf_isspace(int c)
+int	pf_isspace(int c)
 {
 	if (c == '\t' || c == '\n' || c == '\v' || c == '\f' || c == '\r'
 		|| c == ' ')

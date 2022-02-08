@@ -6,7 +6,7 @@
 /*   By: omulder <omulder@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2019/02/08 14:46:44 by omulder       #+#    #+#                 */
-/*   Updated: 2020/06/16 14:30:49 by omulder       ########   odam.nl         */
+/*   Updated: 2022/02/08 17:00:32 by omulder       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,9 +20,9 @@ static void	put_padding(t_fmt fmt)
 		print_padding(fmt.fd, '0', (fmt.width - 1));
 }
 
-int			print_char(t_fmt fmt, unsigned int c)
+int	print_char(t_fmt fmt, unsigned int c)
 {
-	int ret;
+	int	ret;
 
 	put_padding(fmt);
 	if (fmt.conv == 'c' && fmt.length == -1)

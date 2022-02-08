@@ -6,13 +6,13 @@
 /*   By: omulder <omulder@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2019/01/09 12:53:49 by omulder       #+#    #+#                 */
-/*   Updated: 2019/02/02 13:33:50 by omulder       ########   odam.nl         */
+/*   Updated: 2022/02/08 17:08:14 by omulder       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char		*ft_itoa(int n)
+char	*ft_itoa(int n)
 {
 	char	*num;
 	int		tmp;
@@ -20,7 +20,7 @@ char		*ft_itoa(int n)
 
 	i = (ft_intlen(n) - 1);
 	tmp = n;
-	num = (char*)malloc(sizeof(char) * ft_intlen(n) + 1);
+	num = (char *)malloc(sizeof(char) * ft_intlen(n) + 1);
 	if (num == NULL)
 		return (NULL);
 	num[i + 1] = '\0';

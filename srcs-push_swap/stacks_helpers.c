@@ -6,7 +6,7 @@
 /*   By: omulder <omulder@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/01/25 16:27:16 by omulder       #+#    #+#                 */
-/*   Updated: 2020/08/02 14:28:59 by omulder       ########   odam.nl         */
+/*   Updated: 2022/02/08 16:51:28 by omulder       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,12 +17,12 @@ t_stacks	*new_stacks(void)
 {
 	t_stacks	*new;
 
-	new = (t_stacks*)ft_memalloc(sizeof(t_stacks));
+	new = (t_stacks *)ft_memalloc(sizeof(t_stacks));
 	new->a = NULL;
 	return (new);
 }
 
-t_stack		*dup_stack(t_stack *s)
+t_stack	*dup_stack(t_stack *s)
 {
 	t_stack		*dup;
 	t_stack		*ptr;
@@ -50,7 +50,7 @@ t_stacks	*dup_stacks(t_stacks *s)
 {
 	t_stacks	*dup;
 
-	dup = (t_stacks*)ft_memalloc(sizeof(t_stacks));
+	dup = (t_stacks *)ft_memalloc(sizeof(t_stacks));
 	if (dup == NULL)
 		return (NULL);
 	dup->size_a = s->size_a;
@@ -66,13 +66,13 @@ t_stacks	*dup_stacks(t_stacks *s)
 		dup->a = dup_stack(s->a);
 	if (s->b)
 		dup->b = dup_stack(s->b);
-	if ((dup->size_a != 0 && dup->a == NULL) ||
-		(dup->size_b != 0 && dup->b == NULL))
+	if ((dup->size_a != 0 && dup->a == NULL)
+		|| (dup->size_b != 0 && dup->b == NULL))
 		exit(return_error());
 	return (dup);
 }
 
-int			add_op(t_stacks *s, int op)
+int	add_op(t_stacks *s, int op)
 {
 	int	ret;
 
@@ -89,14 +89,14 @@ int			add_op(t_stacks *s, int op)
 	return (ret);
 }
 
-void		delete_stacks(t_stacks **s)
+void	delete_stacks(t_stacks **s)
 {
 	if (s == NULL || *s == NULL)
 		return ;
 	delete_stack(&((*s)->a));
 	delete_stack(&((*s)->b));
 	delete_oplst(&((*s)->oplst));
-	ft_memdel((void**)&((*s)->amirror));
+	ft_memdel((void **)&((*s)->amirror));
 	free(*s);
 	*s = NULL;
 }

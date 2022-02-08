@@ -6,7 +6,7 @@
 /*   By: omulder <omulder@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2019/01/10 14:17:46 by omulder       #+#    #+#                 */
-/*   Updated: 2019/02/02 12:19:38 by omulder       ########   odam.nl         */
+/*   Updated: 2022/02/08 17:09:19 by omulder       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ void	*ft_memset(void *b, int c, size_t len)
 	char	*ptr;
 	size_t	i;
 
-	ptr = (char*)b;
+	ptr = (char *)b;
 	i = 0;
 	while (i < len)
 	{

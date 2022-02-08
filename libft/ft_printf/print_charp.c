@@ -6,13 +6,13 @@
 /*   By: omulder <omulder@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2019/02/08 16:14:44 by omulder       #+#    #+#                 */
-/*   Updated: 2020/06/16 14:30:50 by omulder       ########   odam.nl         */
+/*   Updated: 2022/02/08 17:00:39 by omulder       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-static void		put_padding(t_fmt fmt, int slen)
+static void	put_padding(t_fmt fmt, int slen)
 {
 	if (!fmt.opt[2] && (!fmt.opt[1] || !(fmt.prec == -1 || fmt.prec == 0)))
 		print_padding(fmt.fd, ' ', (fmt.width - slen));
@@ -20,7 +20,7 @@ static void		put_padding(t_fmt fmt, int slen)
 		print_padding(fmt.fd, '0', (fmt.width - slen));
 }
 
-int				print_charp(t_fmt fmt, char *str)
+int	print_charp(t_fmt fmt, char *str)
 {
 	int	slen;
 

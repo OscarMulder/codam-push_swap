@@ -6,7 +6,7 @@
 /*   By: omulder <omulder@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/03/06 15:19:26 by omulder       #+#    #+#                 */
-/*   Updated: 2020/08/02 13:37:04 by omulder       ########   odam.nl         */
+/*   Updated: 2022/02/08 16:45:07 by omulder       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,15 +27,15 @@ static void	find_next_smal(t_stack **smal, t_stack **prev_smal)
 		}
 		else
 		{
-			if (ptr->value > (*prev_smal)->value &&
-				ptr->value < (*smal)->value)
+			if (ptr->value > (*prev_smal)->value
+				&& ptr->value < (*smal)->value)
 				*smal = ptr;
 		}
 		ptr = ptr->next;
 	}
 }
 
-void		add_sorted_positions(t_stacks *s)
+void	add_sorted_positions(t_stacks *s)
 {
 	t_stack		*smal;
 	t_stack		*prev_smal;

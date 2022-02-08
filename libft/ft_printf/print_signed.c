@@ -6,7 +6,7 @@
 /*   By: omulder <omulder@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2019/02/21 12:54:56 by omulder       #+#    #+#                 */
-/*   Updated: 2020/06/16 14:31:26 by omulder       ########   odam.nl         */
+/*   Updated: 2022/02/08 17:01:23 by omulder       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,9 +25,9 @@ static long long	typecast(t_fmt fmt, long long num)
 	return (num);
 }
 
-int					print_signed(t_fmt fmt, long long num)
+int	print_signed(t_fmt fmt, long long num)
 {
-	int ilen;
+	int	ilen;
 
 	num = typecast(fmt, num);
 	ilen = pf_longlen(num);

@@ -6,13 +6,13 @@
 /*   By: omulder <omulder@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2019/02/07 13:52:13 by omulder       #+#    #+#                 */
-/*   Updated: 2019/02/21 16:00:31 by omulder       ########   odam.nl         */
+/*   Updated: 2022/02/08 17:00:20 by omulder       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int		is_wcharp(t_fmt fmt)
+int	is_wcharp(t_fmt fmt)
 {
 	char	c;
 	int		l;

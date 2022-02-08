@@ -6,11 +6,11 @@
 /*   By: omulder <omulder@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2019/01/10 11:27:57 by omulder       #+#    #+#                 */
-/*   Updated: 2019/01/10 11:27:58 by omulder       ########   odam.nl         */
+/*   Updated: 2022/02/08 17:07:45 by omulder       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-int		ft_isalpha(int c)
+int	ft_isalpha(int c)
 {
 	if ((c >= 'a' && c <= 'z') || (c >= 'A' && c <= 'Z'))
 		return (1);

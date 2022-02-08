@@ -6,7 +6,7 @@
 /*   By: omulder <omulder@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2019/01/13 21:49:38 by omulder       #+#    #+#                 */
-/*   Updated: 2019/02/01 11:56:09 by omulder       ########   odam.nl         */
+/*   Updated: 2022/02/08 17:08:35 by omulder       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,9 @@
 
 t_list	*ft_lstnew(void const *content, size_t content_size)
 {
-	t_list *new;
+	t_list	*new;
 
-	new = (t_list*)malloc(sizeof(t_list));
+	new = (t_list *)malloc(sizeof(t_list));
 	if (new == NULL)
 		return (NULL);
 	if (content == NULL)
@@ -27,7 +27,7 @@ t_list	*ft_lstnew(void const *content, size_t content_size)
 	else
 	{
 		new->content = malloc(content_size);
-		ft_memcpy(new->content, (void*)content, content_size);
+		ft_memcpy(new->content, (void *)content, content_size);
 		new->content_size = content_size;
 	}
 	new->next = NULL;

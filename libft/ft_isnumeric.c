@@ -6,7 +6,7 @@
 /*   By: omulder <omulder@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/08/01 16:00:18 by omulder       #+#    #+#                 */
-/*   Updated: 2020/08/01 16:05:47 by omulder       ########   odam.nl         */
+/*   Updated: 2022/02/08 17:07:58 by omulder       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@
 ** an int.
 */
 
-int		ft_isnumeric(char *str)
+int	ft_isnumeric(char *str)
 {
 	char	*orig;
 

@@ -6,13 +6,13 @@
 /*   By: omulder <omulder@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/03/07 18:04:29 by omulder       #+#    #+#                 */
-/*   Updated: 2020/06/16 15:00:58 by omulder       ########   odam.nl         */
+/*   Updated: 2022/02/08 16:50:06 by omulder       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <push_swap.h>
 
-int		find_min(t_stack *a)
+int	find_min(t_stack *a)
 {
 	int		min;
 
@@ -26,7 +26,7 @@ int		find_min(t_stack *a)
 	return (min);
 }
 
-int		find_mid(t_stack *a, int min, int max)
+int	find_mid(t_stack *a, int min, int max)
 {
 	while (a != NULL)
 	{
@@ -37,7 +37,7 @@ int		find_mid(t_stack *a, int min, int max)
 	return (-1);
 }
 
-int		find_max(t_stack *a)
+int	find_max(t_stack *a)
 {
 	int		max;
 

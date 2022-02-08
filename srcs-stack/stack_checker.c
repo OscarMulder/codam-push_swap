@@ -6,14 +6,14 @@
 /*   By: omulder <omulder@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/03/07 18:24:06 by omulder       #+#    #+#                 */
-/*   Updated: 2020/03/07 18:24:24 by omulder       ########   odam.nl         */
+/*   Updated: 2022/02/08 16:51:56 by omulder       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stack.h>
 #include <libft.h>
 
-int		stack_is_sorted(t_stack *a, int prev, int *count)
+int	stack_is_sorted(t_stack *a, int prev, int *count)
 {
 	if (a == NULL && *count != 0)
 		return (1);
@@ -25,7 +25,7 @@ int		stack_is_sorted(t_stack *a, int prev, int *count)
 	return (0);
 }
 
-int		check_stack(t_stack *a, int *count, int argc)
+int	check_stack(t_stack *a, int *count, int argc)
 {
 	if ((a != NULL && !stack_is_sorted(a, a->value, count))
 		|| *count != argc - 1)

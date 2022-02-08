@@ -6,11 +6,11 @@
 /*   By: omulder <omulder@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2019/01/10 11:53:34 by omulder       #+#    #+#                 */
-/*   Updated: 2019/01/10 11:53:36 by omulder       ########   odam.nl         */
+/*   Updated: 2022/02/08 17:07:53 by omulder       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-int		ft_isdigit(int c)
+int	ft_isdigit(int c)
 {
 	if (c >= '0' && c <= '9')
 		return (1);

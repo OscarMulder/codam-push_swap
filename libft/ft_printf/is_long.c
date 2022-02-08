@@ -6,13 +6,13 @@
 /*   By: omulder <omulder@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2019/02/10 20:09:51 by omulder       #+#    #+#                 */
-/*   Updated: 2019/02/28 14:56:20 by omulder       ########   odam.nl         */
+/*   Updated: 2022/02/08 16:59:09 by omulder       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int			is_long(t_fmt fmt)
+int	is_long(t_fmt fmt)
 {
 	char	c;
 	int		l;

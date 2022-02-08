@@ -6,13 +6,13 @@
 /*   By: omulder <omulder@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2019/02/11 12:41:39 by omulder       #+#    #+#                 */
-/*   Updated: 2020/06/16 14:33:42 by omulder       ########   odam.nl         */
+/*   Updated: 2022/02/08 17:01:10 by omulder       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int		print_prehex(t_fmt fmt)
+int	print_prehex(t_fmt fmt)
 {
 	int		hash;
 	char	c;

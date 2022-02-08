@@ -6,7 +6,7 @@
 /*   By: omulder <omulder@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2019/01/14 12:52:12 by omulder       #+#    #+#                 */
-/*   Updated: 2019/02/01 11:56:09 by omulder       ########   odam.nl         */
+/*   Updated: 2022/02/08 17:08:51 by omulder       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ void	*ft_memchr(const void *s, int c, size_t n)
 	unsigned char	*str;
 	size_t			i;
 
-	str = (unsigned char*)s;
+	str = (unsigned char *)s;
 	i = 0;
 	while (i < n)
 	{

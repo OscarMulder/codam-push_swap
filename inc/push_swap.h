@@ -6,7 +6,7 @@
 /*   By: omulder <omulder@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/01/19 15:13:33 by omulder       #+#    #+#                 */
-/*   Updated: 2020/03/07 18:32:07 by omulder       ########   odam.nl         */
+/*   Updated: 2022/02/08 16:52:55 by omulder       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@
 # define TRUE 1
 # define FALSE 0
 
-typedef enum	e_opp {
+typedef enum e_opp {
 	SA,
 	SB,
 	SS,
@@ -32,20 +32,20 @@ typedef enum	e_opp {
 	RRR
 }				t_opp;
 
-typedef struct	s_oplst
+typedef struct s_oplst
 {
 	t_opp			op;
 	struct s_oplst	*next;
 }				t_oplst;
 
-typedef struct	s_moves
+typedef struct s_moves
 {
 	int			a_rot;
 	int			b_rot;
 	int			total;
 }				t_moves;
 
-typedef struct	s_stacks {
+typedef struct s_stacks {
 	int			size_a;
 	int			size_b;
 	int			op_count;

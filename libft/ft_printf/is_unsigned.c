@@ -6,15 +6,15 @@
 /*   By: omulder <omulder@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2019/02/11 13:43:34 by omulder       #+#    #+#                 */
-/*   Updated: 2019/02/21 14:36:26 by omulder       ########   odam.nl         */
+/*   Updated: 2022/02/08 17:00:04 by omulder       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int		is_unsigned(t_fmt fmt)
+int	is_unsigned(t_fmt fmt)
 {
-	char c;
+	char	c;
 
 	c = fmt.conv;
 	if (c == 'u' || c == 'U')

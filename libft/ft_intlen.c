@@ -6,13 +6,13 @@
 /*   By: omulder <omulder@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2019/01/14 19:21:44 by omulder       #+#    #+#                 */
-/*   Updated: 2019/01/19 19:07:29 by omulder       ########   odam.nl         */
+/*   Updated: 2022/02/08 17:07:37 by omulder       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-int		ft_intlen(int n)
+int	ft_intlen(int n)
 {
-	int len;
+	int	len;
 
 	len = 1;
 	if (n > 0)

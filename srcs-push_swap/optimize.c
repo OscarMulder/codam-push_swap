@@ -6,14 +6,14 @@
 /*   By: omulder <omulder@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/02/23 17:07:09 by omulder       #+#    #+#                 */
-/*   Updated: 2020/08/02 14:30:34 by omulder       ########   odam.nl         */
+/*   Updated: 2022/02/08 16:48:56 by omulder       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <push_swap.h>
 #include <stdlib.h>
 
-void		remove_leftover(t_oplst *ptr, t_oplst *end)
+void	remove_leftover(t_oplst *ptr, t_oplst *end)
 {
 	if (ptr == NULL || ptr == end)
 		return ;
@@ -21,7 +21,7 @@ void		remove_leftover(t_oplst *ptr, t_oplst *end)
 	free(ptr);
 }
 
-int			optimize_oplist(t_oplst **oplst)
+int	optimize_oplist(t_oplst **oplst)
 {
 	optimize_rot(oplst);
 	optimize_rev_rot(oplst);

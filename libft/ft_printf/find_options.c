@@ -6,7 +6,7 @@
 /*   By: omulder <omulder@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2019/02/07 12:05:01 by omulder       #+#    #+#                 */
-/*   Updated: 2020/06/16 14:31:42 by omulder       ########   odam.nl         */
+/*   Updated: 2022/02/08 16:56:45 by omulder       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,9 +29,9 @@ static t_fmt	set_option(char c, t_fmt fmt)
 	return (fmt);
 }
 
-t_fmt			find_options(const char **format, t_fmt fmt)
+t_fmt	find_options(const char **format, t_fmt fmt)
 {
-	const char *tmp;
+	const char	*tmp;
 
 	tmp = *format;
 	while (*tmp && !is_conversion(*tmp) && (!pf_isdigit(*tmp) || *tmp == '0'))

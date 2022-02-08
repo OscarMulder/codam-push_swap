@@ -6,15 +6,15 @@
 /*   By: omulder <omulder@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2019/02/01 16:36:22 by omulder       #+#    #+#                 */
-/*   Updated: 2020/02/02 18:05:12 by omulder       ########   odam.nl         */
+/*   Updated: 2022/02/08 16:58:17 by omulder       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int		ft_printf(const char *format, ...)
+int	ft_printf(const char *format, ...)
 {
-	va_list ap;
+	va_list	ap;
 	int		len;
 	t_fmt	fmt;
 
@@ -41,9 +41,9 @@ int		ft_printf(const char *format, ...)
 	return (len);
 }
 
-int		ft_dprintf(int fd, const char *format, ...)
+int	ft_dprintf(int fd, const char *format, ...)
 {
-	va_list ap;
+	va_list	ap;
 	int		len;
 	t_fmt	fmt;
 
@@ -70,9 +70,9 @@ int		ft_dprintf(int fd, const char *format, ...)
 	return (len);
 }
 
-int		ft_eprintf(const char *format, ...)
+int	ft_eprintf(const char *format, ...)
 {
-	va_list ap;
+	va_list	ap;
 	int		len;
 	t_fmt	fmt;
 

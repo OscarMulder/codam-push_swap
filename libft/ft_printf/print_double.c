@@ -6,13 +6,13 @@
 /*   By: omulder <omulder@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2019/02/14 12:42:35 by omulder       #+#    #+#                 */
-/*   Updated: 2020/06/16 14:30:51 by omulder       ########   odam.nl         */
+/*   Updated: 2022/02/08 17:00:48 by omulder       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int					print_double(t_fmt fmt, double num)
+int	print_double(t_fmt fmt, double num)
 {
 	long long	n;
 	long long	ex;

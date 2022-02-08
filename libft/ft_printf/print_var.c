@@ -6,13 +6,13 @@
 /*   By: omulder <omulder@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2019/02/07 13:52:31 by omulder       #+#    #+#                 */
-/*   Updated: 2019/02/28 15:57:55 by omulder       ########   odam.nl         */
+/*   Updated: 2022/02/08 17:01:45 by omulder       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int		print_var(t_fmt fmt, va_list ap)
+int	print_var(t_fmt fmt, va_list ap)
 {
 	if (fmt.conv == '\0')
 		return (0);
@@ -29,8 +29,8 @@ int		print_var(t_fmt fmt, va_list ap)
 	if (is_char(fmt))
 		return (print_char(fmt, va_arg(ap, unsigned int)));
 	if (is_charp(fmt))
-		return (print_charp(fmt, va_arg(ap, char*)));
+		return (print_charp(fmt, va_arg(ap, char *)));
 	if (is_wcharp(fmt))
-		return (print_wcharp(fmt, va_arg(ap, wchar_t*)));
+		return (print_wcharp(fmt, va_arg(ap, wchar_t *)));
 	return (print_char(fmt, fmt.conv));
 }

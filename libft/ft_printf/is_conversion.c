@@ -6,13 +6,13 @@
 /*   By: omulder <omulder@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2019/02/07 12:06:41 by omulder       #+#    #+#                 */
-/*   Updated: 2019/02/08 13:52:09 by omulder       ########   odam.nl         */
+/*   Updated: 2022/02/08 16:58:37 by omulder       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int		is_conversion(char c)
+int	is_conversion(char c)
 {
 	if (c == 'd' || c == 'i' || c == 'o')
 		return (1);

@@ -6,7 +6,7 @@
 /*   By: omulder <omulder@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/08/01 16:11:48 by omulder       #+#    #+#                 */
-/*   Updated: 2020/08/02 13:24:21 by omulder       ########   odam.nl         */
+/*   Updated: 2022/02/08 17:13:37 by omulder       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,7 +52,7 @@ static int	count_digits(char *str)
 ** Returns a newly allocated string.
 */
 
-char		*ft_trim_num(char *str)
+char	*ft_trim_num(char *str)
 {
 	int		count_zero;
 	int		start;

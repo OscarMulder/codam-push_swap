@@ -6,7 +6,7 @@
 /*   By: omulder <omulder@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2019/01/10 10:40:56 by omulder       #+#    #+#                 */
-/*   Updated: 2019/02/01 11:56:09 by omulder       ########   odam.nl         */
+/*   Updated: 2022/02/08 17:13:25 by omulder       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,13 +14,13 @@
 
 char	*ft_strstr(const char *haystack, const char *needle)
 {
-	int i;
-	int j;
-	int k;
+	int	i;
+	int	j;
+	int	k;
 
 	i = 0;
 	if (needle[0] == '\0')
-		return ((char*)haystack);
+		return ((char *)haystack);
 	while (haystack[i] != '\0')
 	{
 		j = 0;
@@ -30,7 +30,7 @@ char	*ft_strstr(const char *haystack, const char *needle)
 			j++;
 			k++;
 			if (needle[j] == '\0')
-				return ((char*)&haystack[i]);
+				return ((char *)&haystack[i]);
 		}
 		i++;
 	}

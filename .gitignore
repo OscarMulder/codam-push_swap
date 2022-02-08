@@ -5,3 +5,4 @@ push_swap
 .vscode/settings.json
 info.plist
 *.dSYM
+.DS_Store

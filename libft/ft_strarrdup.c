@@ -6,7 +6,7 @@
 /*   By: omulder <omulder@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2019/04/03 18:15:59 by omulder       #+#    #+#                 */
-/*   Updated: 2019/04/03 18:43:09 by omulder       ########   odam.nl         */
+/*   Updated: 2022/02/08 17:11:21 by omulder       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ char	**ft_strarrdup(char **arr)
 	while (arr[count] != 0)
 		count++;
 	i = 0;
-	new = (char**)ft_memalloc(sizeof(char*) * (count + 1));
+	new = (char **)ft_memalloc(sizeof(char *) * (count + 1));
 	while (arr[i] != 0)
 	{
 		new[i] = ft_strdup(arr[i]);

@@ -6,20 +6,20 @@
 /*   By: omulder <omulder@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/01/25 17:06:57 by omulder       #+#    #+#                 */
-/*   Updated: 2020/08/02 13:37:31 by omulder       ########   odam.nl         */
+/*   Updated: 2022/02/08 16:47:58 by omulder       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <push_swap.h>
 #include <libft.h>
 
-int			add_oplst_item(t_oplst **oplst, t_opp op)
+int	add_oplst_item(t_oplst **oplst, t_opp op)
 {
 	t_oplst	*new;
 
 	if (oplst == NULL)
 		return (0);
-	new = (t_oplst*)ft_memalloc(sizeof(t_oplst));
+	new = (t_oplst *)ft_memalloc(sizeof(t_oplst));
 	if (new == NULL)
 		return (-1);
 	new->op = op;
@@ -28,7 +28,7 @@ int			add_oplst_item(t_oplst **oplst, t_opp op)
 	return (1);
 }
 
-void		delete_oplst(t_oplst **oplst)
+void	delete_oplst(t_oplst **oplst)
 {
 	if (oplst == NULL || *oplst == NULL)
 		return ;
@@ -37,7 +37,7 @@ void		delete_oplst(t_oplst **oplst)
 	*oplst = NULL;
 }
 
-char		*op_to_string(t_opp op)
+char	*op_to_string(t_opp op)
 {
 	if (op == SA)
 		return ("sa");
@@ -64,14 +64,14 @@ char		*op_to_string(t_opp op)
 	return ("");
 }
 
-int			count_oplist(t_oplst *ptr)
+int	count_oplist(t_oplst *ptr)
 {
 	if (ptr == NULL)
 		return (0);
 	return (1 + count_oplist(ptr->next));
 }
 
-void		print_oplst(t_oplst *oplst)
+void	print_oplst(t_oplst *oplst)
 {
 	if (oplst == NULL)
 		return ;

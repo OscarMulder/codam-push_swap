@@ -6,7 +6,7 @@
 /*   By: omulder <omulder@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2019/03/27 17:11:22 by omulder       #+#    #+#                 */
-/*   Updated: 2019/03/27 17:57:48 by omulder       ########   odam.nl         */
+/*   Updated: 2022/02/08 17:07:31 by omulder       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,7 @@ static int	check_buffer(char **line, char **buff)
 	return (1);
 }
 
-int			ft_getline_fd(int fd, char **line)
+int	ft_getline_fd(int fd, char **line)
 {
 	char	*buff;
 	int		ret;

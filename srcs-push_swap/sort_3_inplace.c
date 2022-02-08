@@ -6,7 +6,7 @@
 /*   By: omulder <omulder@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/01/27 16:19:08 by omulder       #+#    #+#                 */
-/*   Updated: 2020/08/02 14:28:51 by omulder       ########   odam.nl         */
+/*   Updated: 2022/02/08 16:50:36 by omulder       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,12 +29,12 @@ static void	sort_3_a_last(t_stacks *s)
 		opp_do(s, RRA);
 }
 
-void		sort_3_a(t_stacks *s)
+void	sort_3_a(t_stacks *s)
 {
 	if (s->a->pos < s->a->next->pos && s->a->next->pos < s->a->next->next->pos)
 		return ;
 	if (s->a->next->pos > s->a->next->next->pos
-	&& s->a->pos > s->a->next->next->pos)
+		&& s->a->pos > s->a->next->next->pos)
 	{
 		opp_do(s, PB);
 		opp_do(s, PB);
@@ -44,7 +44,7 @@ void		sort_3_a(t_stacks *s)
 		return ;
 	}
 	if (s->a->pos > s->a->next->pos && s->a->next->pos < s->a->next->next->pos
-	&& s->a->pos < s->a->next->next->pos)
+		&& s->a->pos < s->a->next->next->pos)
 	{
 		opp_do(s, SA);
 		return ;
@@ -69,12 +69,12 @@ static void	sort_3_b_last(t_stacks *s)
 		opp_do(s, RRB);
 }
 
-void		sort_3_b(t_stacks *s)
+void	sort_3_b(t_stacks *s)
 {
 	if (s->b->pos > s->b->next->pos && s->b->next->pos > s->b->next->next->pos)
 		return ;
 	if (s->b->next->pos < s->b->next->next->pos
-	&& s->b->pos < s->b->next->next->pos)
+		&& s->b->pos < s->b->next->next->pos)
 	{
 		opp_do(s, PA);
 		opp_do(s, PA);
@@ -84,7 +84,7 @@ void		sort_3_b(t_stacks *s)
 		return ;
 	}
 	if (s->b->pos < s->b->next->pos && s->b->next->pos > s->b->next->next->pos
-	&& s->b->pos > s->b->next->next->pos)
+		&& s->b->pos > s->b->next->next->pos)
 	{
 		opp_do(s, SB);
 		return ;

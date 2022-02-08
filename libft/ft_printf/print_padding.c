@@ -6,15 +6,15 @@
 /*   By: omulder <omulder@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2019/02/08 15:50:37 by omulder       #+#    #+#                 */
-/*   Updated: 2019/03/21 20:39:04 by omulder       ########   odam.nl         */
+/*   Updated: 2022/02/08 17:01:05 by omulder       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int		print_padding(int fd, char c, int size)
+int	print_padding(int fd, char c, int size)
 {
-	int i;
+	int	i;
 
 	i = 0;
 	while (i < size)

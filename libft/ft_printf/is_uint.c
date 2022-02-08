@@ -6,13 +6,13 @@
 /*   By: omulder <omulder@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2019/02/21 12:15:00 by omulder       #+#    #+#                 */
-/*   Updated: 2019/02/28 14:57:14 by omulder       ########   odam.nl         */
+/*   Updated: 2022/02/08 16:59:54 by omulder       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int		is_uint(t_fmt fmt)
+int	is_uint(t_fmt fmt)
 {
 	char	c;
 	int		l;

@@ -6,7 +6,7 @@
 /*   By: omulder <omulder@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2019/01/09 11:10:09 by omulder       #+#    #+#                 */
-/*   Updated: 2020/08/02 13:24:27 by omulder       ########   odam.nl         */
+/*   Updated: 2022/02/08 17:16:16 by omulder       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@
 # include "ft_getline_fd.h"
 # include "get_next_line.h"
 
-typedef struct	s_list
+typedef struct s_list
 {
 	void			*content;
 	size_t			content_size;
@@ -38,11 +38,11 @@ char			*ft_strcpy(char *dst, const char *src);
 char			*ft_strdup(const char *s1);
 char			*ft_strjoin(char const *s1, char const *s2);
 char			*ft_strmap(char const *s, char (*f)(char));
-char			*ft_strmapi(char const *s, char(*f)(unsigned int, char));
+char			*ft_strmapi(char const *s, char (*f)(unsigned int, char));
 char			*ft_strncat(char *s1, const char *s2, size_t n);
 char			*ft_strncpy(char *dst, const char *src, size_t len);
 char			*ft_strnew(size_t size);
-char			*ft_strnstr(const char *haystack, const char *needle,
+char			*ft_strnstr(const char *haystack, const char *needle, \
 				size_t len);
 char			*ft_strrchr(const char *s, int c);
 char			*ft_strreplace(char *str, char *find, char *replace);

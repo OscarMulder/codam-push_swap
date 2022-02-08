@@ -6,7 +6,7 @@
 /*   By: omulder <omulder@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2019/01/11 14:51:49 by omulder       #+#    #+#                 */
-/*   Updated: 2019/02/01 11:56:09 by omulder       ########   odam.nl         */
+/*   Updated: 2022/02/08 17:13:10 by omulder       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,9 @@
 
 static void	build_array(char const *s, char c, char **arr, unsigned int strs)
 {
-	unsigned int i;
-	unsigned int j;
-	unsigned int k;
+	unsigned int	i;
+	unsigned int	j;
+	unsigned int	k;
 
 	i = 0;
 	j = 0;
@@ -41,7 +41,7 @@ static void	build_array(char const *s, char c, char **arr, unsigned int strs)
 	arr[j] = 0;
 }
 
-char		**ft_strsplit(char const *s, char c)
+char	**ft_strsplit(char const *s, char c)
 {
 	char			**arr;
 	unsigned int	strs;
@@ -49,7 +49,7 @@ char		**ft_strsplit(char const *s, char c)
 	if (s == NULL)
 		return (NULL);
 	strs = ft_strdcount(s, c);
-	arr = (char**)malloc(sizeof(char*) * (strs + 1));
+	arr = (char **)malloc(sizeof(char *) * (strs + 1));
 	if (arr == NULL)
 		return (NULL);
 	build_array(s, c, arr, strs);

@@ -6,7 +6,7 @@
 /*   By: omulder <omulder@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2019/01/09 11:27:12 by omulder       #+#    #+#                 */
-/*   Updated: 2019/03/21 20:28:48 by omulder       ########   odam.nl         */
+/*   Updated: 2022/02/08 16:55:26 by omulder       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 static int	putmore(int fd, unsigned int c)
 {
-	unsigned char b;
+	unsigned char	b;
 
 	if (c > 0x7FF && c <= 0xFFFF)
 	{
@@ -41,9 +41,9 @@ static int	putmore(int fd, unsigned int c)
 	return (1);
 }
 
-int			pf_putchar_uni(int fd, unsigned int c)
+int	pf_putchar_uni(int fd, unsigned int c)
 {
-	unsigned char b;
+	unsigned char	b;
 
 	if (c <= 0x7f)
 	{

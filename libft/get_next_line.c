@@ -6,7 +6,7 @@
 /*   By: omulder <omulder@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2019/12/06 18:28:29 by omulder       #+#    #+#                 */
-/*   Updated: 2020/01/14 10:27:14 by omulder       ########   odam.nl         */
+/*   Updated: 2022/02/08 17:13:41 by omulder       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,7 +69,7 @@ static int	get_line(t_fdlist **lst, t_fdlist *current, char **line)
 	return (FUNCT_SUCCESS);
 }
 
-int			get_next_line(int fd, char **line)
+int	get_next_line(int fd, char **line)
 {
 	static t_fdlist	*lst;
 	t_fdlist		*current;

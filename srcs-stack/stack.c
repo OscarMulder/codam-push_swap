@@ -6,14 +6,14 @@
 /*   By: omulder <omulder@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/01/14 12:35:38 by omulder       #+#    #+#                 */
-/*   Updated: 2020/08/01 17:06:03 by omulder       ########   odam.nl         */
+/*   Updated: 2022/02/08 16:51:48 by omulder       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <libft.h>
 #include <stack.h>
 
-int		check_and_push(t_stack **stack, char *value)
+int	check_and_push(t_stack **stack, char *value)
 {
 	char	*tvalue;
 	int		num;
@@ -35,7 +35,7 @@ int		check_and_push(t_stack **stack, char *value)
 	return (0);
 }
 
-int		push_stack(t_stack **stack, int value)
+int	push_stack(t_stack **stack, int value)
 {
 	t_stack		*new;
 
@@ -49,7 +49,7 @@ int		push_stack(t_stack **stack, int value)
 	return (1);
 }
 
-int		value_exists(t_stack *a, int value)
+int	value_exists(t_stack *a, int value)
 {
 	if (a == NULL)
 		return (0);

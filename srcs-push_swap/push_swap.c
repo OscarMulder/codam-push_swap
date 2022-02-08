@@ -6,7 +6,7 @@
 /*   By: omulder <omulder@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/01/19 15:22:41 by omulder       #+#    #+#                 */
-/*   Updated: 2020/08/02 14:27:14 by omulder       ########   odam.nl         */
+/*   Updated: 2022/02/08 16:49:52 by omulder       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,7 +60,7 @@ static void	sort_and_print(t_stacks *s)
 	if (is_small)
 	{
 		if (small->op_count <= quick->op_count
-		&& small->op_count <= insert->op_count)
+			&& small->op_count <= insert->op_count)
 			print_oplst(small->oplst);
 		else
 			is_small = 0;
@@ -85,7 +85,7 @@ static void	init_mirror(t_stacks *s)
 	}
 }
 
-int			main(int argc, char **argv)
+int	main(int argc, char **argv)
 {
 	size_t		i;
 	t_stacks	*s;

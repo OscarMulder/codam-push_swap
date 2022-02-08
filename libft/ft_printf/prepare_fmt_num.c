@@ -6,13 +6,13 @@
 /*   By: omulder <omulder@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2019/02/28 15:23:53 by omulder       #+#    #+#                 */
-/*   Updated: 2020/06/16 14:31:26 by omulder       ########   odam.nl         */
+/*   Updated: 2022/02/08 17:00:25 by omulder       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-t_fmt				prepare_fmt_num(t_fmt fmt, t_fmt copy, int neg)
+t_fmt	prepare_fmt_num(t_fmt fmt, t_fmt copy, int neg)
 {
 	if (copy.prec != 0 && copy.prec != -1)
 		fmt.width = (fmt.width - fmt.prec - 1);

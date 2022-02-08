@@ -6,7 +6,7 @@
 /*   By: omulder <omulder@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/03/06 15:37:35 by omulder       #+#    #+#                 */
-/*   Updated: 2020/08/02 14:26:42 by omulder       ########   odam.nl         */
+/*   Updated: 2022/02/08 16:49:27 by omulder       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,7 +56,7 @@ static void	second_if(t_stacks *s, int *prev, int *last, int *i)
 	(*i)++;
 }
 
-void		prepare_inserting(t_stacks *s)
+void	prepare_inserting(t_stacks *s)
 {
 	int		max_to_keep;
 	int		first;
@@ -74,8 +74,8 @@ void		prepare_inserting(t_stacks *s)
 			last = first_if(s, &prev, &first, &max_to_keep);
 			i++;
 		}
-		else if (last > 0 && s->a->pos < first &&
-		(s->a->pos > prev && last > 1))
+		else if (last > 0 && s->a->pos < first
+			&& (s->a->pos > prev && last > 1))
 			second_if(s, &prev, &last, &i);
 		else
 			opp_do(s, PB);

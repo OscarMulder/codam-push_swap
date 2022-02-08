@@ -6,7 +6,7 @@
 /*   By: omulder <omulder@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2019/04/01 14:48:01 by omulder       #+#    #+#                 */
-/*   Updated: 2019/04/01 17:12:01 by omulder       ########   odam.nl         */
+/*   Updated: 2022/02/08 17:11:51 by omulder       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ const char *str, int i)
 		*dquote = !*dquote;
 }
 
-int			ft_strdcountq(char const *s, char c)
+int	ft_strdcountq(char const *s, char c)
 {
 	unsigned int	i;
 	unsigned int	strs;

@@ -6,14 +6,14 @@
 /*   By: omulder <omulder@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2019/12/06 18:28:06 by omulder       #+#    #+#                 */
-/*   Updated: 2020/03/07 18:15:52 by omulder       ########   odam.nl         */
+/*   Updated: 2022/02/08 17:14:03 by omulder       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "get_next_line.h"
 #include <stdlib.h>
 
-int			ft_strfind_c(const char *s, int c)
+int	ft_strfind_c(const char *s, int c)
 {
 	int		i;
 
@@ -31,7 +31,7 @@ int			ft_strfind_c(const char *s, int c)
 	return (-1);
 }
 
-void		*ft_calloc(size_t size)
+void	*ft_calloc(size_t size)
 {
 	void	*new;
 	size_t	i;
@@ -42,13 +42,13 @@ void		*ft_calloc(size_t size)
 	i = 0;
 	while (i < size)
 	{
-		((char*)new)[i] = 0;
+		((char *)new)[i] = 0;
 		i++;
 	}
 	return (new);
 }
 
-char		*ft_strjoinfree_s1(char *s1, char *s2)
+char	*ft_strjoinfree_s1(char *s1, char *s2)
 {
 	char	*join;
 	int		i;
@@ -96,9 +96,9 @@ t_fdlist	*fdlist_find_create(t_fdlist **lst, int fd)
 	return (current);
 }
 
-int			free_buffer_item(t_fdlist **lst, t_fdlist *current)
+int	free_buffer_item(t_fdlist **lst, t_fdlist *current)
 {
-	t_fdlist *ptr;
+	t_fdlist	*ptr;
 
 	free(current->buf);
 	if (*lst == current)

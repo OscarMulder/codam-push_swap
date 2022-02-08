@@ -6,7 +6,7 @@
 /*   By: omulder <omulder@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/03/03 12:51:11 by omulder       #+#    #+#                 */
-/*   Updated: 2020/08/02 14:29:04 by omulder       ########   odam.nl         */
+/*   Updated: 2022/02/08 16:50:20 by omulder       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,28 +21,28 @@ static void	sort_2(t_stacks *s)
 static void	sort_3(t_stacks *s, int min, int mid, int max)
 {
 	if (s->a->pos == min && s->a->next->pos == mid
-	&& s->a->next->next->pos == max)
+		&& s->a->next->next->pos == max)
 		return ;
 	else if (s->a->pos == mid && s->a->next->pos == max
-	&& s->a->next->next->pos == min)
+		&& s->a->next->next->pos == min)
 		opp_do(s, RRA);
 	else if (s->a->pos == max && s->a->next->pos == mid
-	&& s->a->next->next->pos == min)
+		&& s->a->next->next->pos == min)
 	{
 		opp_do(s, SA);
 		opp_do(s, RRA);
 	}
 	else if (s->a->pos == mid && s->a->next->pos == min
-	&& s->a->next->next->pos == max)
+		&& s->a->next->next->pos == max)
 		opp_do(s, SA);
 	else if (s->a->pos == min && s->a->next->pos == max
-	&& s->a->next->next->pos == mid)
+		&& s->a->next->next->pos == mid)
 	{
 		opp_do(s, RRA);
 		opp_do(s, SA);
 	}
 	else if (s->a->pos == max && s->a->next->pos == min
-	&& s->a->next->next->pos == mid)
+		&& s->a->next->next->pos == mid)
 		opp_do(s, RA);
 }
 
@@ -80,7 +80,7 @@ static void	sort_5(t_stacks *s)
 	rot_a_sorted(s);
 }
 
-int			small_sort(t_stacks *s)
+int	small_sort(t_stacks *s)
 {
 	if (s->total == 2)
 		sort_2(s);

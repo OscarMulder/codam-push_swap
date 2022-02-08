@@ -6,7 +6,7 @@
 /*   By: omulder <omulder@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2019/01/09 17:26:37 by omulder       #+#    #+#                 */
-/*   Updated: 2019/02/02 13:37:33 by omulder       ########   odam.nl         */
+/*   Updated: 2022/02/08 17:12:15 by omulder       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,9 @@
 
 size_t	ft_strlcat(char *dst, const char *src, size_t size)
 {
-	size_t i;
-	size_t j;
-	size_t dstlen;
+	size_t	i;
+	size_t	j;
+	size_t	dstlen;
 
 	i = 0;
 	j = 0;
