@@ -6,7 +6,7 @@
 /*   By: omulder <omulder@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/01/14 10:30:57 by omulder       #+#    #+#                 */
-/*   Updated: 2022/02/08 16:20:58 by omulder       ########   odam.nl         */
+/*   Updated: 2022/02/08 16:35:26 by omulder       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,7 +58,8 @@ static int	read_and_do_opps(t_stack **a, t_stack **b, int *op_count)
 	while (ret == 1)
 	{
 		ret = get_next_line(STDIN_FILENO, &line);
-		if (*op_count == 0 && ret == 1 && *line == '\0') {
+		if (*op_count == 0 && ret == 1 && *line == '\0')
+		{
 			ft_strdel(&line);
 			return (1);
 		}
@@ -70,7 +71,6 @@ static int	read_and_do_opps(t_stack **a, t_stack **b, int *op_count)
 				return (0);
 			}
 			(*op_count)++;
-			ft_strdel(&line);
 		}
 	}
 	ft_strdel(&line);
@@ -94,10 +94,10 @@ static int	parse_argv(t_stack **a, int argc, char **argv)
 	return (0);
 }
 
-int			main(int argc, char **argv)
+int	main(int argc, char **argv)
 {
 	t_stack	*a;
-	t_stack *b;
+	t_stack	*b;
 	int		count;
 
 	if (argc < 2)
